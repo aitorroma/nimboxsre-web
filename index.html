@@ -47,8 +47,10 @@
       /* ---------- logos / stack strip ---------- */
       .stack { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--soft); }
       .stack-in { display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px; padding:20px 0; }
-      .stack-in span:first-child { font:500 .72rem "DM Mono",monospace; color:var(--muted); letter-spacing:.08em; }
+      .stack-in .lbl { font:500 .72rem "DM Mono",monospace; color:var(--muted); letter-spacing:.08em; }
       .stack-in b { font-weight:600; font-size:.92rem; opacity:.72; }
+      .stack-in .soon-lbl { font:500 .68rem "DM Mono",monospace; color:var(--accent); letter-spacing:.06em; }
+      .stack-in b.soon { font-weight:500; opacity:.45; }
 
       /* ---------- section scaffolding ---------- */
       section h2 { font-size:clamp(2.1rem,4.4vw,4rem); font-weight:500; letter-spacing:-.06em; line-height:1.02; margin:14px 0 24px; }
@@ -203,7 +205,7 @@
             <a class="cta" href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
             <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
           </div>
-          <div class="hero-note"><span>●</span> <span>Encaja con tu <b>Monit / Zabbix / PRTG</b> actual — no es otro dashboard que sustituir.</span></div>
+          <div class="hero-note"><span>●</span> <span>Colector <b>nativo de Monit</b> — encaja con tu stack actual, no es otro dashboard que sustituir.</span></div>
         </div>
         <div class="hero-art" aria-label="Panel de rendimiento y SLA de agentes en NimBox SRE">
           <div class="shape"></div>
@@ -214,8 +216,9 @@
       <!-- STACK STRIP -->
       <div class="stack">
         <div class="wrap stack-in">
-          <span>SE INTEGRA CON LO QUE YA USAS</span>
-          <b>Monit</b><b>Zabbix</b><b>PRTG</b><b>Sentry / error tracking</b><b>SSH · PAM</b><b>API</b>
+          <span class="lbl">SE INTEGRA CON LO QUE YA USAS</span>
+          <b>Monit (nativo)</b><b>OpenTelemetry / OTLP</b><b>Prometheus</b><b>Webhooks</b><b>SSH · PAM</b><b>API</b>
+          <span class="soon-lbl">PRÓXIMAMENTE</span><b class="soon">Zabbix</b><b class="soon">PRTG</b>
         </div>
       </div>
 
@@ -244,7 +247,7 @@
             <div class="step">
               <div class="n">01</div>
               <h3>Conecta hosts y alertas</h3>
-              <p>Monit, Zabbix, PRTG y error tracking entran a una sola capa operativa. Contexto por host: estado, métricas, procesos e historial de incidencias.</p>
+              <p>Monit (nativo), OpenTelemetry y Prometheus entran a una sola capa operativa. Contexto por host: estado, métricas, procesos e historial de incidencias.</p>
               <span class="tag">// no montas otro silo</span>
             </div>
             <div class="step">
@@ -367,8 +370,8 @@
           <h2>Preguntas frecuentes.</h2>
         </div>
         <details open>
-          <summary>¿Sustituye a mi Monit / Zabbix / PRTG?</summary>
-          <p>No. NimBox SRE es una capa por encima: consume tus alertas y monitorización actuales y las convierte en operación con contexto, evidencia y SLA. No cambias de herramienta de monitorización ni migras nada.</p>
+          <summary>¿Sustituye a mi monitorización actual?</summary>
+          <p>No. NimBox SRE es una capa por encima: se integra de forma nativa con Monit y admite OpenTelemetry (OTLP) y Prometheus, y convierte esas alertas en operación con contexto, evidencia y SLA. No cambias de herramienta de monitorización ni migras nada. La ingesta de Zabbix y PRTG está en el roadmap.</p>
         </details>
         <details>
           <summary>¿Los agentes tocan producción por su cuenta?</summary>
