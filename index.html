@@ -3,39 +3,421 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="NimBox SRE transforma alertas en operaciones controladas, auditables y medibles." />
-    <title>NimBox SRE — Operaciones que entregan resultados</title>
+    <meta name="description" content="NimBox SRE es la capa de operación SRE gestionada para MSPs y software houses: unifica hosts, incidencias, runbooks y agentes, y deja evidencia mensual lista para tu SLA. Sin montar un NOC 24×7." />
+    <meta name="theme-color" content="#faf9f6" />
+    <title>NimBox SRE — Resuelve más incidencias con el mismo equipo</title>
+    <link rel="icon" href="assets/nimbox-sre-logo.png" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="NimBox SRE — Operación SRE gestionada para MSPs" />
+    <meta property="og:description" content="Convierte alertas en servicio facturable: hosts, incidencias, runbooks aprobados y agentes con evidencia mensual para tu SLA. Sin montar un NOC 24×7." />
+    <meta property="og:image" content="assets/agent-performance.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
     <style>
-      :root { --ink:#111215; --paper:#faf9f6; --soft:#efede8; --line:#dedbd5; --accent:#e8462b; --muted:#686865; --mint:#d6eaaf; }
-      * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+      :root { --ink:#111215; --paper:#faf9f6; --soft:#efede8; --line:#dedbd5; --accent:#e8462b; --muted:#686865; --mint:#d6eaaf; --ok:#3d7a3a; }
+      * { box-sizing:border-box; } html { scroll-behavior:smooth; } body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
       a { color:inherit; text-decoration:none; } .wrap { width:min(1230px,calc(100% - 48px)); margin:auto; } .mono { font-family:"DM Mono",monospace; }
-      .top { position:sticky; top:0; z-index:20; border-bottom:1px solid var(--line); background:rgba(250,249,246,.94); backdrop-filter:blur(14px); } nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
-      .brand { display:inline-flex; align-items:center; flex:none; }.brand-logo { display:block; width:160px; height:auto; }
-      .links { display:flex; align-items:center; gap:26px; color:var(--muted); font-size:.86rem; }.links a:not(.cta):hover { color:var(--accent); }.cta { display:inline-flex; align-items:center; gap:9px; padding:11px 15px; background:var(--ink); color:#fff; font-weight:600; transition:background .2s; }.cta:hover{background:var(--accent)}
-      .hero { display:grid; grid-template-columns:1.04fr .96fr; align-items:stretch; min-height:600px; }.hero-copy { padding:126px 60px 90px 0; }.eyebrow { font:500 .7rem/1 "DM Mono",monospace; color:var(--accent); letter-spacing:.15em; }.hero h1 { margin:19px 0 24px; max-width:710px; font-size:clamp(3.4rem,6vw,6.3rem); line-height:.94; letter-spacing:-.075em; font-weight:500; }.hero p { color:var(--muted); max-width:515px; line-height:1.7; font-size:1.06rem; }.hero .cta { margin-top:27px; }
-      .hero-art { position:relative; display:flex; align-items:flex-end; padding:72px 0 58px 42px; overflow:hidden; }.shape { position:absolute; background:var(--accent); width:82%; height:62%; top:55px; right:0; clip-path:polygon(18% 0,100% 0,100% 100%,0 82%); }.product-shot { position:relative; z-index:1; width:110%; margin:0 0 0 -42px; border:1px solid var(--line); background:#fff; box-shadow:17px 18px 0 var(--ink); overflow:hidden; }.product-shot img { display:block; width:100%; height:auto; }
-      .numbers { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }.numbers div { padding:27px 0 30px; border-right:1px solid var(--line); }.numbers div+div{padding-left:29px}.numbers div:last-child{border:0}.numbers b{display:block;font-size:1.35rem;font-weight:500;letter-spacing:-.04em}.numbers span{display:block;margin-top:5px;color:var(--muted);font-size:.82rem}
-      .intro { padding:135px 0 108px; max-width:940px; }.intro h2,.outcomes h2 { font-size:clamp(2.4rem,4.7vw,4.7rem); font-weight:500; letter-spacing:-.07em; line-height:1; margin:14px 0 28px; }.intro p { max-width:700px; color:var(--muted); line-height:1.75; font-size:1.05rem; }.principles { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:55px; }.principle { padding-top:16px; border-top:2px solid var(--ink); }.principle b { display:block;font-size:1.03rem;margin-bottom:8px; }.principle span { color:var(--muted);font-size:.84rem;line-height:1.55; }
-      .outcomes { background:var(--soft); padding:112px 0; }.outcomes-head { display:grid; grid-template-columns:1fr 1fr; gap:55px; align-items:end; margin-bottom:55px; }.outcomes h2{margin-bottom:0}.outcomes-head p{color:var(--muted);line-height:1.7;margin:0}.offerings { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); }.offering { min-height:235px; padding:25px 24px 25px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }.offering:nth-child(3n+2),.offering:nth-child(3n+3){padding-left:24px}.offering:nth-child(3n){border-right:0}.offering em{font:500 .67rem "DM Mono",monospace;color:var(--accent);font-style:normal}.offering h3{font-size:1.22rem;font-weight:500;letter-spacing:-.04em;margin:38px 0 8px}.offering p{color:var(--muted);font-size:.84rem;line-height:1.55;margin:0;max-width:290px}.learn{display:inline-block;margin-top:20px;font-size:.78rem;font-weight:700;text-decoration:underline;text-underline-offset:4px}
-      .product-proof { display:grid; grid-template-columns:1.08fr .92fr; gap:68px; align-items:center; padding:118px 0; }.proof-shot { margin:0; border:1px solid var(--line); background:#fff; box-shadow:14px 15px 0 var(--accent); overflow:hidden; }.proof-shot img { display:block; width:100%; height:auto; }.proof-copy h2 { max-width:490px; margin:14px 0 24px; font-size:clamp(2.4rem,4.5vw,4.5rem); line-height:.98; letter-spacing:-.07em; font-weight:500; }.proof-copy p { max-width:430px; margin:0; color:var(--muted); font-size:1.02rem; line-height:1.75; }.proof-points { margin:30px 0 0; padding:0; list-style:none; border-top:1px solid var(--line); }.proof-points li { padding:12px 0; border-bottom:1px solid var(--line); font-size:.88rem; font-weight:600; }.proof-points li::before { content:"↗"; display:inline-block; margin-right:10px; color:var(--accent); }
-      .closing { padding:115px 0; display:grid; grid-template-columns:1.12fr .88fr; gap:45px; align-items:end; }.closing h2{font-size:clamp(2.5rem,5vw,5.1rem);font-weight:500;letter-spacing:-.075em;line-height:.94;margin:13px 0 0}.closing-copy{padding:26px 0;border-top:1px solid var(--ink)}.closing-copy p{color:var(--muted);line-height:1.7;margin:0 0 22px}
-      footer{background:var(--ink);color:#fff;padding:29px 0}.footer-in{display:flex;justify-content:space-between;font-size:.76rem;color:#b8b8b8}.footer-in a{color:#fff}
-      @media(max-width:780px){.wrap{width:min(100% - 34px,1230px)}.links a:not(.cta){display:none}.hero{grid-template-columns:1fr;min-height:auto}.hero-copy{padding:86px 0 62px}.hero-art{min-height:430px;padding:0 22px 63px 0}.shape{height:86%;top:0;width:88%}.product-shot{width:100%;margin:0}.numbers,.principles,.offerings,.outcomes-head,.product-proof,.closing{grid-template-columns:1fr}.numbers div,.numbers div+div{padding:20px 0;border-right:0;border-bottom:1px solid var(--line)}.intro,.outcomes,.product-proof{padding:78px 0}.principles{gap:28px;margin-top:40px}.outcomes-head{gap:18px;margin-bottom:38px}.offering,.offering:nth-child(3n+2),.offering:nth-child(3n+3){padding:24px 0;border-right:0;min-height:0}.product-proof{gap:42px}.closing{padding:78px 0;gap:35px}.footer-in{gap:12px;flex-direction:column}}
+      .eyebrow { font:500 .7rem/1.3 "DM Mono",monospace; color:var(--accent); letter-spacing:.15em; text-transform:uppercase; }
+
+      /* ---------- header ---------- */
+      .top { position:sticky; top:0; z-index:30; border-bottom:1px solid var(--line); background:rgba(250,249,246,.9); backdrop-filter:blur(14px); }
+      nav { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+      .brand { display:inline-flex; align-items:center; flex:none; } .brand-logo { display:block; width:154px; height:auto; }
+      .links { display:flex; align-items:center; gap:26px; color:var(--muted); font-size:.86rem; } .links a:not(.cta):hover { color:var(--accent); }
+      .cta { display:inline-flex; align-items:center; gap:9px; padding:12px 17px; background:var(--ink); color:#fff; font-weight:600; transition:background .2s,transform .2s; white-space:nowrap; } .cta:hover{ background:var(--accent); transform:translateY(-1px); }
+      .cta-ghost { background:transparent; color:var(--ink); border:1px solid var(--ink); } .cta-ghost:hover{ background:var(--ink); color:#fff; }
+
+      /* ---------- hero ---------- */
+      .hero { display:grid; grid-template-columns:1.04fr .96fr; align-items:stretch; min-height:600px; }
+      .hero-copy { padding:104px 60px 84px 0; align-self:center; }
+      .hero h1 { margin:18px 0 22px; max-width:720px; font-size:clamp(2.9rem,5.4vw,5.4rem); line-height:.96; letter-spacing:-.055em; font-weight:500; }
+      .hero h1 em { font-style:normal; color:var(--accent); }
+      .hero .lead { color:var(--muted); max-width:530px; line-height:1.7; font-size:1.08rem; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; align-items:center; }
+      .hero-note { display:flex; align-items:center; gap:8px; margin-top:20px; font-size:.8rem; color:var(--muted); }
+      .hero-note b { color:var(--ink); font-weight:600; }
+      .hero-art { position:relative; display:flex; align-items:center; padding:60px 0 60px 42px; overflow:hidden; }
+      .shape { position:absolute; background:var(--accent); width:82%; height:66%; top:50%; right:0; transform:translateY(-50%); clip-path:polygon(18% 0,100% 0,100% 100%,0 82%); }
+      .product-shot { position:relative; z-index:1; width:112%; margin:0 0 0 -42px; border:1px solid var(--line); background:#fff; box-shadow:17px 18px 0 var(--ink); overflow:hidden; }
+      .product-shot img { display:block; width:100%; height:auto; }
+
+      /* ---------- logos / stack strip ---------- */
+      .stack { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--soft); }
+      .stack-in { display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px; padding:20px 0; }
+      .stack-in span:first-child { font:500 .72rem "DM Mono",monospace; color:var(--muted); letter-spacing:.08em; }
+      .stack-in b { font-weight:600; font-size:.92rem; opacity:.72; }
+
+      /* ---------- section scaffolding ---------- */
+      section h2 { font-size:clamp(2.1rem,4.4vw,4rem); font-weight:500; letter-spacing:-.06em; line-height:1.02; margin:14px 0 24px; }
+      .section-pad { padding:104px 0; }
+      .lead-p { color:var(--muted); line-height:1.75; font-size:1.05rem; }
+
+      /* ---------- pain ---------- */
+      .pain { max-width:1000px; }
+      .pain h2 { max-width:820px; }
+      .pain-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0 44px; margin-top:46px; border-top:1px solid var(--ink); }
+      .pain-item { display:flex; gap:16px; padding:24px 0; border-bottom:1px solid var(--line); }
+      .pain-item .x { flex:none; width:26px; height:26px; border-radius:50%; background:var(--ink); color:#fff; display:grid; place-items:center; font-size:.9rem; margin-top:2px; }
+      .pain-item b { display:block; font-size:1.02rem; margin-bottom:5px; }
+      .pain-item span { color:var(--muted); font-size:.88rem; line-height:1.55; }
+
+      /* ---------- how it works ---------- */
+      .how { background:var(--ink); color:#fff; }
+      .how .eyebrow { color:var(--mint); }
+      .how h2 { color:#fff; }
+      .how-head { max-width:760px; margin-bottom:56px; }
+      .how-head p { color:#b9b9b6; line-height:1.7; font-size:1.05rem; }
+      .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:1px solid #33342f; }
+      .step { padding:30px 30px 34px 0; border-right:1px solid #33342f; }
+      .step:last-child { border-right:0; padding-right:0; }
+      .step .n { font:500 .72rem "DM Mono",monospace; color:var(--accent); }
+      .step h3 { font-size:1.3rem; font-weight:500; letter-spacing:-.03em; margin:26px 0 10px; }
+      .step p { color:#b9b9b6; font-size:.9rem; line-height:1.6; margin:0; }
+      .step .tag { display:inline-block; margin-top:16px; font:500 .68rem "DM Mono",monospace; color:#8f8f8b; }
+
+      /* ---------- platform / offerings ---------- */
+      .outcomes { background:var(--soft); }
+      .outcomes-head { display:grid; grid-template-columns:1fr 1fr; gap:55px; align-items:end; margin-bottom:52px; }
+      .outcomes-head h2 { margin-bottom:0; } .outcomes-head p { color:var(--muted); line-height:1.7; margin:0; }
+      .offerings { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); }
+      .offering { min-height:230px; padding:26px 24px 26px 0; border-bottom:1px solid var(--line); border-right:1px solid var(--line); }
+      .offering:nth-child(3n+2),.offering:nth-child(3n+3){ padding-left:24px; }
+      .offering:nth-child(3n){ border-right:0; }
+      .offering em { font:500 .67rem "DM Mono",monospace; color:var(--accent); font-style:normal; }
+      .offering h3 { font-size:1.22rem; font-weight:500; letter-spacing:-.03em; margin:34px 0 8px; }
+      .offering p { color:var(--muted); font-size:.85rem; line-height:1.55; margin:0; max-width:300px; }
+
+      /* ---------- proof (image + copy) ---------- */
+      .proof { display:grid; grid-template-columns:1.08fr .92fr; gap:64px; align-items:center; }
+      .proof.rev { grid-template-columns:.92fr 1.08fr; }
+      .proof.rev .proof-shot { order:2; }
+      .proof-shot { margin:0; border:1px solid var(--line); background:#fff; box-shadow:14px 15px 0 var(--accent); overflow:hidden; }
+      .proof.alt .proof-shot { box-shadow:14px 15px 0 var(--ink); }
+      .proof-shot img { display:block; width:100%; height:auto; }
+      .proof-copy h2 { max-width:500px; font-size:clamp(2rem,3.8vw,3.4rem); line-height:1.02; margin:14px 0 20px; }
+      .proof-copy p { max-width:440px; margin:0; color:var(--muted); font-size:1.02rem; line-height:1.72; }
+      .proof-points { margin:26px 0 0; padding:0; list-style:none; border-top:1px solid var(--line); }
+      .proof-points li { padding:12px 0; border-bottom:1px solid var(--line); font-size:.9rem; font-weight:600; }
+      .proof-points li::before { content:"↗"; display:inline-block; margin-right:10px; color:var(--accent); }
+
+      /* ---------- ROI metrics ---------- */
+      .roi-head { max-width:720px; margin-bottom:48px; }
+      .roi-head p { color:var(--muted); line-height:1.7; font-size:1.05rem; }
+      .roi { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--ink); }
+      .roi div { padding:30px 22px 34px 0; border-right:1px solid var(--line); }
+      .roi div:last-child { border-right:0; }
+      .roi b { display:block; font-size:clamp(2rem,3.2vw,2.7rem); font-weight:500; letter-spacing:-.05em; line-height:1; }
+      .roi b span { color:var(--accent); }
+      .roi p { margin:12px 0 0; color:var(--muted); font-size:.86rem; line-height:1.5; }
+
+      /* ---------- fit / ICP ---------- */
+      .fit { background:var(--soft); }
+      .fit-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+      .fit-card { background:var(--paper); border:1px solid var(--line); padding:34px 32px; }
+      .fit-card h3 { display:flex; align-items:center; gap:10px; font-size:1.25rem; font-weight:600; letter-spacing:-.02em; margin:0 0 20px; }
+      .fit-card ul { list-style:none; margin:0; padding:0; }
+      .fit-card li { padding:12px 0; border-top:1px solid var(--line); font-size:.92rem; line-height:1.5; display:flex; gap:12px; }
+      .fit-card li:first-of-type { border-top:0; }
+      .fit-card .mk { flex:none; font-weight:700; }
+      .fit-yes .mk { color:var(--ok); } .fit-no .mk { color:var(--muted); }
+      .fit-no { opacity:.92; } .fit-no h3 { color:var(--muted); }
+
+      /* ---------- FAQ ---------- */
+      .faq-head { max-width:680px; margin-bottom:40px; }
+      details { border-top:1px solid var(--line); }
+      details:last-of-type { border-bottom:1px solid var(--line); }
+      summary { list-style:none; cursor:pointer; padding:24px 40px 24px 0; position:relative; font-size:1.08rem; font-weight:600; letter-spacing:-.01em; }
+      summary::-webkit-details-marker { display:none; }
+      summary::after { content:"+"; position:absolute; right:4px; top:50%; transform:translateY(-50%); font-weight:400; font-size:1.5rem; color:var(--accent); transition:transform .2s; }
+      details[open] summary::after { content:"–"; }
+      details p { margin:0 0 26px; max-width:760px; color:var(--muted); line-height:1.7; font-size:.98rem; }
+
+      /* ---------- final CTA ---------- */
+      .final { background:var(--ink); color:#fff; text-align:center; }
+      .final h2 { color:#fff; max-width:900px; margin:0 auto 26px; }
+      .final p { max-width:560px; margin:0 auto 34px; color:#b9b9b6; line-height:1.7; font-size:1.05rem; }
+      .final .cta { background:var(--accent); } .final .cta:hover { background:#fff; color:var(--ink); }
+      .final .cta-ghost { color:#fff; border-color:#4a4b45; } .final .cta-ghost:hover { background:#fff; color:var(--ink); border-color:#fff; }
+      .final-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+      footer { background:#0b0c0e; color:#fff; padding:30px 0; }
+      .footer-in { display:flex; justify-content:space-between; gap:14px; font-size:.78rem; color:#8f8f8b; }
+      .footer-in a { color:#fff; } .footer-in a:hover { color:var(--accent); }
+
+      /* ---------- reveal ---------- */
+      .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+      .reveal.in { opacity:1; transform:none; }
+      @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+
+      /* ---------- responsive ---------- */
+      @media(max-width:900px){
+        .hero { grid-template-columns:1fr; min-height:auto; }
+        .hero-copy { padding:72px 0 54px; }
+        .hero-art { min-height:400px; padding:0 20px 60px 0; }
+        .shape { height:88%; top:0; transform:none; width:90%; }
+        .product-shot { width:100%; margin:0; }
+        .pain-grid,.steps,.outcomes-head,.proof,.proof.rev,.roi,.fit-grid { grid-template-columns:1fr; }
+        .proof.rev .proof-shot { order:0; }
+        .proof,.proof.rev { gap:40px; }
+        .step { border-right:0; border-bottom:1px solid #33342f; padding:26px 0 30px; }
+        .step:last-child { border-bottom:0; }
+        .roi div { border-right:0; border-bottom:1px solid var(--line); padding:24px 0 26px; }
+        .roi div:last-child { border-bottom:0; }
+        .fit-grid { gap:24px; }
+      }
+      @media(max-width:640px){
+        .links a:not(.cta){ display:none; }
+        .section-pad{ padding:70px 0; }
+        .pain-grid{ margin-top:34px; }
+        .offering,.offering:nth-child(3n+2),.offering:nth-child(3n+3){ padding:24px 0; border-right:0; min-height:0; }
+        .outcomes-head{ gap:16px; margin-bottom:34px; }
+        .footer-in{ flex-direction:column; }
+      }
     </style>
   </head>
   <body>
-    <header class="top"><nav class="wrap"><a class="brand" href="#inicio" aria-label="NimBox SRE, inicio"><img class="brand-logo" src="assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a><div class="links"><a href="#plataforma">Plataforma</a><a href="#servicios">Servicios</a><a href="mailto:hola@nimboxsre.com" class="cta">Hablemos <span>↗</span></a></div></nav></header>
+    <header class="top">
+      <nav class="wrap">
+        <a class="brand" href="#inicio" aria-label="NimBox SRE, inicio"><img class="brand-logo" src="assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a>
+        <div class="links">
+          <a href="#para-quien">Para quién</a>
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#plataforma">Plataforma</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:hola@nimboxsre.com?subject=Quiero%20ver%20NimBox%20SRE" class="cta">Pedir demo <span>↗</span></a>
+        </div>
+      </nav>
+    </header>
+
     <main>
-      <section id="inicio" class="wrap hero"><div class="hero-copy"><div class="eyebrow">AGENTES QUE OPERAN CON CONTEXTO</div><h1>Resolución de incidencias agéntica.</h1><p>NimBox SRE coordina agentes que investigan, actúan y dejan evidencia de cada resolución para que tu equipo pueda operar y demostrar el servicio.</p><a class="cta" href="mailto:hola@nimboxsre.com">Conocer NimBox SRE <span>↗</span></a></div><div class="hero-art" aria-label="Vista de rendimiento de agentes en NimBox SRE"><div class="shape"></div><figure class="product-shot"><img src="assets/agent-performance.png" alt="Panel de rendimiento y SLA de agentes de NimBox SRE" /></figure></div></section>
-      <section class="wrap numbers"><div><b>Unifica host e incidencia</b><span>El contexto no se pierde entre alertas.</span></div><div><b>Coordina personas y agentes</b><span>Cada tarea tiene propiedad y evidencia.</span></div><div><b>Convierte operación en servicio</b><span>SLA y actividad listos para informar.</span></div></section>
-      <section class="wrap intro"><div class="eyebrow">NO MÁS OPERACIÓN INVISIBLE</div><h2>¿No sabes exactamente qué se ha hecho en tu infraestructura?</h2><p>Muchas organizaciones reciben alertas, abren tickets y resuelven problemas, pero no tienen una visión operativa que conecte el host afectado, la persona o agente responsable, el acceso utilizado y la evidencia de la solución.</p><div class="principles"><div class="principle"><b>De señal a decisión</b><span>Monitorización orientada a resolver, no a acumular paneles.</span></div><div class="principle"><b>De acción a evidencia</b><span>Runbooks, sesiones y actividad vinculados a la incidencia.</span></div><div class="principle"><b>De coste a valor</b><span>Información clara para operar, revisar SLA y facturar.</span></div></div></section>
-      <section id="plataforma" class="outcomes"><div class="wrap"><div class="outcomes-head"><div><div class="eyebrow">DE LA DETECCIÓN A LA RESOLUCIÓN</div><h2>Una plataforma para operar con intención.</h2></div><p>Diseñada para software houses y equipos de infraestructura que necesitan convertir operaciones complejas en resultados claros para sus clientes.</p></div><div id="servicios" class="offerings"><article class="offering"><em>01 / MONITORIZACIÓN</em><h3>Contexto por host</h3><p>Estado, métricas e historial de incidencias reunidos donde hacen falta.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article><article class="offering"><em>02 / INCIDENCIAS</em><h3>Respuesta coordinada</h3><p>Propiedad, severidad, evidencia y SLA para cerrar el ciclo operativo.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article><article class="offering"><em>03 / AGENTES</em><h3>Automatización con trazabilidad</h3><p>Entiende qué investigó un agente, cuánto tardó y qué resultado obtuvo.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article><article class="offering"><em>04 / ACCESO SEGURO</em><h3>Intervenciones controladas</h3><p>Warpgate delimita permisos, sesiones y auditoría entre el operador y el target.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article><article class="offering"><em>05 / INFORMES</em><h3>Servicio que se puede explicar</h3><p>Convierte actividad, resoluciones y cumplimiento de SLA en un informe útil.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article><article class="offering"><em>06 / INTEGRACIONES</em><h3>Una capa, no otro silo</h3><p>Conecta alertas, error tracking y herramientas existentes en un flujo operativo.</p><a class="learn" href="mailto:hola@nimboxsre.com">Conocer más</a></article></div></div></section>
-      <section class="wrap product-proof"><figure class="proof-shot"><img src="assets/runbooks.png" alt="Runbooks aprobados para remediación asistida por agentes en NimBox SRE" /></figure><div class="proof-copy"><div class="eyebrow">AUTOMATIZACIÓN CONTROLADA</div><h2>Agentes que ejecutan con procedimientos revisables.</h2><p>Convierte el conocimiento operativo en runbooks aprobados, versionados y vinculados al host o servicio afectado. El agente actúa dentro de un marco que tu equipo puede auditar.</p><ul class="proof-points"><li>Runbooks aprobados y versionados</li><li>Ámbito por host, servicio o alerta</li><li>Evidencia lista para revisión y facturación</li></ul></div></section>
-      <section class="wrap closing"><div><div class="eyebrow">OPERACIÓN GESTIONADA</div><h2>Haz que cada incidente deje una mejora, no solo un cierre.</h2></div><div class="closing-copy"><p>Te ayudamos a construir una operación más predecible: menos ruido, mejor respuesta y evidencia suficiente para tomar decisiones y comunicar valor.</p><a class="cta" href="mailto:hola@nimboxsre.com">Empezar una conversación <span>↗</span></a></div></section>
+      <!-- HERO -->
+      <section id="inicio" class="wrap hero">
+        <div class="hero-copy">
+          <div class="eyebrow">Operación SRE gestionada · para MSPs y software houses</div>
+          <h1>Resuelve más incidencias con <em>el mismo equipo</em>.</h1>
+          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: unifica hosts, incidencias, runbooks aprobados y agentes, y deja evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
+          <div class="hero-actions">
+            <a class="cta" href="mailto:hola@nimboxsre.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
+            <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
+          </div>
+          <div class="hero-note"><span>●</span> <span>Encaja con tu <b>Monit / Zabbix / PRTG</b> actual — no es otro dashboard que sustituir.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Panel de rendimiento y SLA de agentes en NimBox SRE">
+          <div class="shape"></div>
+          <figure class="product-shot"><img src="assets/agent-performance.png" alt="Panel de rendimiento, KPI y SLA de agentes de NimBox SRE" loading="eager" /></figure>
+        </div>
+      </section>
+
+      <!-- STACK STRIP -->
+      <div class="stack">
+        <div class="wrap stack-in">
+          <span>SE INTEGRA CON LO QUE YA USAS</span>
+          <b>Monit</b><b>Zabbix</b><b>PRTG</b><b>Sentry / error tracking</b><b>SSH · PAM</b><b>API</b>
+        </div>
+      </div>
+
+      <!-- PAIN / PARA QUIÉN -->
+      <section id="para-quien" class="wrap section-pad pain reveal">
+        <div class="eyebrow">Gestionas infra de varios clientes</div>
+        <h2>Ya monitorizas. Aun así, el servicio no se ve.</h2>
+        <p class="lead-p" style="max-width:720px">Tienes 50–500 hosts repartidos entre pymes, un equipo contenido y clientes que pagan mantenimiento o SLA. El problema no es detectar: es <b>operar, controlar y demostrar</b> lo que hace tu equipo.</p>
+        <div class="pain-grid">
+          <div class="pain-item"><span class="x">✕</span><div><b>Las alertas viven en WhatsApp</b><span>Llegan por chat, se resuelven de memoria y no queda rastro de quién tocó qué.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>El cierre de mes es arqueología</b><span>Reconstruís la actividad a mano para justificar horas y defender el SLA.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>Todo depende del sénior</b><span>El conocimiento está en dos cabezas; el resto escala tickets hacia arriba.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>El 24×7 real es inasumible</b><span>Un NOC de verdad no cuadra con 3–15 técnicos y márgenes de mantenimiento.</span></div></div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="como-funciona" class="how">
+        <div class="wrap section-pad reveal">
+          <div class="how-head">
+            <div class="eyebrow">De la alerta al informe</div>
+            <h2>Cómo funciona, en tres pasos.</h2>
+            <p>Conectas lo que ya tienes, defines cómo se actúa y cada incidencia deja evidencia. Tu equipo opera con contexto; tú facturas con pruebas.</p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <div class="n">01</div>
+              <h3>Conecta hosts y alertas</h3>
+              <p>Monit, Zabbix, PRTG y error tracking entran a una sola capa operativa. Contexto por host: estado, métricas, procesos e historial de incidencias.</p>
+              <span class="tag">// no montas otro silo</span>
+            </div>
+            <div class="step">
+              <div class="n">02</div>
+              <h3>Agentes con runbooks aprobados</h3>
+              <p>Los agentes investigan y ejecutan procedimientos versionados, con ámbito por host o servicio. Todo acceso pasa por un PAM que audita cada acción del agente.</p>
+              <span class="tag">// automatización que puedes auditar</span>
+            </div>
+            <div class="step">
+              <div class="n">03</div>
+              <h3>Evidencia lista para facturar</h3>
+              <p>Cada cierre deja propiedad, severidad, sesión, tiempo y cumplimiento de SLA. El informe mensual se genera solo, no se reconstruye.</p>
+              <span class="tag">// servicio que se explica</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATFORM / OFFERINGS -->
+      <section id="plataforma" class="outcomes">
+        <div class="wrap section-pad reveal">
+          <div class="outcomes-head">
+            <div>
+              <div class="eyebrow">Una capa, no otro dashboard</div>
+              <h2>Todo lo que necesita tu operación.</h2>
+            </div>
+            <p>Pensada para MSPs, software houses y equipos de infraestructura que necesitan convertir operaciones complejas en resultados claros —y facturables— para sus clientes.</p>
+          </div>
+          <div class="offerings">
+            <article class="offering"><em>01 / MONITORIZACIÓN</em><h3>Contexto por host</h3><p>Estado, métricas, procesos e historial de incidencias reunidos donde hacen falta.</p></article>
+            <article class="offering"><em>02 / INCIDENCIAS</em><h3>Respuesta coordinada</h3><p>Propiedad, severidad, evidencia y SLA para cerrar el ciclo operativo completo.</p></article>
+            <article class="offering"><em>03 / AGENTES</em><h3>Automatización con trazabilidad</h3><p>Qué investigó un agente, cuánto tardó y qué resultado obtuvo — con KPI y SLA por agente.</p></article>
+            <article class="offering"><em>04 / ACCESO PRIVILEGIADO</em><h3>Cada acción, auditada</h3><p>Un PAM delimita permisos y sesiones y registra todo lo que hace el agente entre el operador y el target.</p></article>
+            <article class="offering"><em>05 / INFORMES</em><h3>Servicio que se puede explicar</h3><p>Convierte actividad, resoluciones y cumplimiento de SLA en un informe mensual útil.</p></article>
+            <article class="offering"><em>06 / INTEGRACIONES</em><h3>Encaja, no reemplaza</h3><p>Conecta alertas, error tracking y tus herramientas actuales en un solo flujo operativo.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROOF 1: runbooks -->
+      <section class="wrap section-pad proof reveal">
+        <figure class="proof-shot"><img src="assets/runbooks.png" alt="Runbooks aprobados y versionados para remediación asistida por agentes en NimBox SRE" loading="lazy" /></figure>
+        <div class="proof-copy">
+          <div class="eyebrow">Menos dependencia del sénior</div>
+          <h2>El conocimiento deja de vivir en dos cabezas.</h2>
+          <p>Convierte cada resolución en un runbook aprobado, versionado y vinculado al host o servicio afectado. El agente —o cualquier técnico— actúa dentro de un marco que tu equipo revisa y controla.</p>
+          <ul class="proof-points">
+            <li>Runbooks aprobados y versionados (v1, v2, v3…)</li>
+            <li>Ámbito por host, servicio o alerta</li>
+            <li>Revocables en un clic, auditables siempre</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- PROOF 2: host detail -->
+      <section class="outcomes">
+        <div class="wrap section-pad proof rev alt reveal">
+          <figure class="proof-shot"><img src="assets/modern-collector-host.png" alt="Vista de detalle de un host en NimBox SRE con métricas de sistema, historial de incidencias y procesos monitorizados" loading="lazy" /></figure>
+          <div class="proof-copy">
+            <div class="eyebrow">Todo el host en una pantalla</div>
+            <h2>Diagnóstico sin saltar entre diez herramientas.</h2>
+            <p>Métricas del sistema, carga, procesos monitorizados e historial de incidencias resueltas —con responsable y evidencia— en una sola vista por host. El técnico que coge la guardia entiende el estado en segundos.</p>
+            <ul class="proof-points">
+              <li>CPU, memoria, swap y load en tiempo real</li>
+              <li>Historial de incidencias con responsable y cierre</li>
+              <li>Procesos y uptime monitorizados por host</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ROI -->
+      <section class="wrap section-pad reveal">
+        <div class="roi-head">
+          <div class="eyebrow">Por qué mueve el margen</div>
+          <h2>Más servicio por técnico, sin ampliar el equipo.</h2>
+          <p>NimBox SRE no te da otro panel: te da capacidad. El mismo equipo cierra más incidencias, con procedimientos controlados y evidencia que puedes facturar cada mes.</p>
+        </div>
+        <div class="roi">
+          <div><b>+<span>incidencias</span></b><p>Más cierres por técnico gracias a runbooks y agentes que hacen el trabajo repetitivo.</p></div>
+          <div><b>MTTR <span>↓</span></b><p>Menos tiempo por incidencia: contexto por host y procedimiento a mano desde el primer minuto.</p></div>
+          <div><b>SLA <span>medible</span></b><p>Primera respuesta y resolución con objetivos configurables y cumplimiento visible.</p></div>
+          <div><b>Sin <span>NOC</span></b><p>Cobertura operativa sin el coste de montar y mantener un 24×7 real.</p></div>
+        </div>
+      </section>
+
+      <!-- FIT / ICP -->
+      <section class="fit">
+        <div class="wrap section-pad reveal">
+          <div class="eyebrow">Encaje honesto</div>
+          <h2 style="margin-bottom:44px">¿Es NimBox SRE para ti?</h2>
+          <div class="fit-grid">
+            <div class="fit-card fit-yes">
+              <h3><span class="mk">✓</span> Encajas si…</h3>
+              <ul>
+                <li><span class="mk">✓</span> Eres un MSP, software house o consultora DevOps/SysAdmin.</li>
+                <li><span class="mk">✓</span> Tienes 3–15 técnicos y 50–500 hosts entre varios clientes.</li>
+                <li><span class="mk">✓</span> Ya usas Monit, Zabbix o PRTG + tickets + WhatsApp.</li>
+                <li><span class="mk">✓</span> Vendes mantenimiento, bolsa de horas o SLA.</li>
+                <li><span class="mk">✓</span> Quieres crecer sin montar un NOC/SOC 24×7.</li>
+              </ul>
+            </div>
+            <div class="fit-card fit-no">
+              <h3><span class="mk">—</span> Aún no, si…</h3>
+              <ul>
+                <li><span class="mk">—</span> Eres enterprise con NOC, SIEM y procesos ya muy maduros.</li>
+                <li><span class="mk">—</span> Eres un IT interno de una sola empresa (menor efecto multiplicador).</li>
+                <li><span class="mk">—</span> Eres una startup pequeña que se apaña con autoservicio.</li>
+                <li><span class="mk">—</span> No vendes operación como servicio a terceros.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="wrap section-pad reveal">
+        <div class="faq-head">
+          <div class="eyebrow">Antes de que preguntes</div>
+          <h2>Preguntas frecuentes.</h2>
+        </div>
+        <details open>
+          <summary>¿Sustituye a mi Monit / Zabbix / PRTG?</summary>
+          <p>No. NimBox SRE es una capa por encima: consume tus alertas y monitorización actuales y las convierte en operación con contexto, evidencia y SLA. No cambias de herramienta de monitorización ni migras nada.</p>
+        </details>
+        <details>
+          <summary>¿Los agentes tocan producción por su cuenta?</summary>
+          <p>Nunca sin control. Los agentes solo ejecutan runbooks aprobados y versionados, con ámbito acotado por host o servicio, y todo acceso pasa por un PAM que registra y audita cada acción del agente en una sesión. Puedes revocar cualquier procedimiento en un clic.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tardo en verlo funcionando?</summary>
+          <p>El objetivo es un piloto sobre un cliente real en días, no meses: conectas hosts y alertas, defines los primeros runbooks a partir de lo que ya resuelves a mano, y empiezas a acumular evidencia desde la primera guardia.</p>
+        </details>
+        <details>
+          <summary>¿Qué gano en el cierre de mes?</summary>
+          <p>Cada incidencia deja propiedad, severidad, tiempo, sesión y cumplimiento de SLA. El informe mensual se genera con esa evidencia en lugar de reconstruirse a mano — lo usas para justificar horas, defender el SLA y demostrar el valor del servicio.</p>
+        </details>
+        <details>
+          <summary>¿Cómo se compra?</summary>
+          <p>Empezamos con una demo corta sobre tu caso y un piloto acotado. Escríbenos a <a href="mailto:hola@nimboxsre.com" style="color:var(--accent);font-weight:600">hola@nimboxsre.com</a> y montamos una llamada para ver si encaja.</p>
+        </details>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="final">
+        <div class="wrap section-pad reveal">
+          <div class="eyebrow" style="color:var(--mint)">Operación gestionada</div>
+          <h2>Haz que cada incidente deje una mejora, no solo un cierre.</h2>
+          <p>Menos ruido, mejor respuesta y evidencia suficiente para operar con el mismo equipo, defender tu SLA y facturar sin arqueología.</p>
+          <div class="final-actions">
+            <a class="cta" href="mailto:hola@nimboxsre.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
+            <a class="cta cta-ghost" href="mailto:hola@nimboxsre.com?subject=Piloto%20NimBox%20SRE">Hablar de un piloto</a>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer><div class="wrap footer-in"><span>© 2026 NimBox SRE</span><span>Operaciones y observabilidad gestionada · <a href="mailto:hola@nimboxsre.com">hola@nimboxsre.com</a></span></div></footer>
+
+    <footer>
+      <div class="wrap footer-in">
+        <span>© 2026 NimBox SRE · Operación y observabilidad gestionada</span>
+        <span><a href="mailto:hola@nimboxsre.com">hola@nimboxsre.com</a></span>
+      </div>
+    </footer>
+
+    <script>
+      (function(){
+        var els = document.querySelectorAll('.reveal');
+        if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
+        els.forEach(function(e){ io.observe(e); });
+      })();
+    </script>
   </body>
 </html>
