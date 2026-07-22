@@ -27,6 +27,7 @@
       nav { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
       .brand { display:inline-flex; align-items:center; flex:none; } .brand-logo { display:block; width:154px; height:auto; }
       .links { display:flex; align-items:center; gap:26px; color:var(--muted); font-size:.86rem; } .links a:not(.cta):hover { color:var(--accent); }
+      .login { font-weight:600; color:var(--ink); }
       .cta { display:inline-flex; align-items:center; gap:9px; padding:12px 17px; background:var(--ink); color:#fff; font-weight:600; transition:background .2s,transform .2s; white-space:nowrap; } .cta:hover{ background:var(--accent); transform:translateY(-1px); }
       .cta-ghost { background:transparent; color:var(--ink); border:1px solid var(--ink); } .cta-ghost:hover{ background:var(--ink); color:#fff; }
 
@@ -171,7 +172,8 @@
         .fit-grid { gap:24px; }
       }
       @media(max-width:640px){
-        .links a:not(.cta){ display:none; }
+        .links a:not(.cta):not(.login){ display:none; }
+        .links{ gap:16px; }
         .section-pad{ padding:70px 0; }
         .pain-grid{ margin-top:34px; }
         .offering,.offering:nth-child(3n+2),.offering:nth-child(3n+3){ padding:24px 0; border-right:0; min-height:0; }
@@ -189,6 +191,7 @@
           <a href="#como-funciona">Cómo funciona</a>
           <a href="#plataforma">Plataforma</a>
           <a href="#faq">FAQ</a>
+          <a href="https://app.nimboxsre.com/" class="login">Acceder</a>
           <a href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE" class="cta">Pedir demo <span>↗</span></a>
         </div>
       </nav>
@@ -409,7 +412,7 @@
     <footer>
       <div class="wrap footer-in">
         <span>© 2026 NimBox SRE · Operación y observabilidad gestionada</span>
-        <span><a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a></span>
+        <span><a href="https://app.nimboxsre.com/">Acceder a la app</a> · <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a></span>
       </div>
     </footer>
 
