@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="NimBox SRE es la capa de operación SRE gestionada para MSPs: agente nativo en Go (~8 MB, sin dependencias), colector de Monit, incidencias, runbooks y evidencia mensual. Sin montar un NOC 24×7." />
+    <meta name="description" content="NimBox SRE: agente con autodescubrimiento, eBPF integrado y PAM nativo. Conecta hosts, incidencias, runbooks y evidencia mensual. Sin montar un NOC 24×7." />
     <meta name="theme-color" content="#faf9f6" />
     <title>NimBox SRE — Resuelve más incidencias con el mismo equipo</title>
     <link rel="icon" href="assets/favicon.ico?v=3" sizes="any" />
@@ -14,7 +14,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NimBox SRE — Operación SRE gestionada para MSPs" />
-    <meta property="og:description" content="Agente nativo en Go (~8 MB, sin dependencias), colector de Monit, incidencias, runbooks y evidencia mensual. Convierte alertas en servicio facturable. Sin montar un NOC 24×7." />
+    <meta property="og:description" content="Agente con autodescubrimiento, eBPF integrado y PAM nativo. Conecta hosts, incidencias, runbooks y evidencia mensual. Sin montar un NOC 24×7." />
     <meta property="og:image" content="assets/agent-performance.png?v=2" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -222,12 +222,12 @@
         <div class="hero-copy">
           <div class="eyebrow">Operación SRE gestionada · para MSPs y software houses</div>
           <h1>Resuelve más incidencias con <em>el mismo equipo</em>.</h1>
-          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente nativo en Go de mínimo consumo, colector de Monit, incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
+          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente con autodescubrimiento, eBPF integrado y PAM nativo. Incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
           <div class="hero-actions">
             <a class="cta" href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
             <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
           </div>
-          <div class="hero-note"><span>●</span> <span>Agente <b>nativo en Go</b> — binario estático sin dependencias, &lt;8 MB, &lt;6 MB de RAM. Un solo comando para instalar.</span></div>
+          <div class="hero-note"><span>●</span> <span>Agente con <b>autodescubrimiento</b> — un solo comando, detecta todo solo. <b>eBPF</b> integrado para profiling profundo.</span></div>
         </div>
         <div class="hero-art" aria-label="Panel de rendimiento y SLA de agentes en NimBox SRE">
           <div class="shape"></div>
@@ -239,8 +239,7 @@
       <div class="stack">
         <div class="wrap stack-in">
           <span class="lbl">SE INTEGRA CON LO QUE YA USAS</span>
-          <b>Agente Go (~8 MB)</b><b>Monit (nativo)</b><b>OpenTelemetry / OTLP</b><b>Prometheus</b><b>Webhooks</b><b>SSH · PAM</b><b>API</b>
-          <span class="soon-lbl">PRÓXIMAMENTE</span><b class="soon">Zabbix</b><b class="soon">PRTG</b><b class="soon">Observabilidad eBPF</b>
+          <b>Autodescubrimiento</b><b>PAM integrado</b><b>eBPF profiling</b><b>Monit</b><b>OpenTelemetry</b><b>Prometheus</b><b>Webhooks</b>
         </div>
       </div>
 
@@ -274,9 +273,9 @@
             </div>
             <div class="step">
               <div class="n">02</div>
-              <h3>Agente nativo, mínimo consumo</h3>
-              <p>Binario estático en Go (~8 MB), sin dependencias, &lt;6 MB de RAM. Se autoconfigura, detecta servicios, registra en PAM y reporta cada 5 min. Circuit breaker, backoff exponente y cola en disco si el colector cae.</p>
-              <span class="tag">// sin dependencias, sin CGO, sin sorpresas</span>
+              <h3>Se instala y se descubre solo</h3>
+              <p>Un solo comando: descarga el binario, autodetecta los servicios en marcha (nginx, postgres, docker, redis…), registra el host en PAM y empieza a reportar. Sin configurar nada. Se integra con eBPF para profiling profundo cuando lo necesitás.</p>
+              <span class="tag">// de cero a operando en 60 segundos</span>
             </div>
             <div class="step">
               <div class="n">03</div>
@@ -301,8 +300,8 @@
           <div class="offerings">
             <article class="offering"><em>01 / MONITORIZACIÓN</em><h3>Contexto por host</h3><p>Estado, métricas, procesos e historial de incidencias reunidos donde hacen falta.</p></article>
             <article class="offering"><em>02 / INCIDENCIAS</em><h3>Respuesta coordinada</h3><p>Propiedad, severidad, evidencia y SLA para cerrar el ciclo operativo completo.</p></article>
-            <article class="offering"><em>03 / AGENTE NATIVO</em><h3>Mínimo consumo, máxima cobertura</h3><p>Binario Go estático (~8 MB), &lt;6 MB RAM, sin dependencias. CPU, disco, red, Docker, Kubernetes — todo en un solo proceso.</p></article>
-            <article class="offering"><em>04 / ACCESO PRIVILEGIADO</em><h3>Cada acción, auditada</h3><p>El agente se registra automáticamente en PAM (Warpgate) al instalarse. SSH con clave, sin contraseñas en tráfico.</p></article>
+            <article class="offering"><em>03 / AGENTE</em><h3>Autodescubrimiento inteligente</h3><p>Se autoconfigura al instalarse: detecta servicios, procesos y contenedores. Con eBPF integrado, va más allá de las métricas para encontrar la causa raíz.</p></article>
+            <article class="offering"><em>04 / ACCESO PRIVILEGIADO</em><h3>PAM nativo, sin fricción</h3><p>El agente se auto-registra en PAM al instalarse. Cada conexión SSH queda auditada. Sin contraseñas en tráfico, sin configuración manual.</p></article>
             <article class="offering"><em>05 / INFORMES</em><h3>Servicio que se puede explicar</h3><p>Convierte actividad, resoluciones y cumplimiento de SLA en un informe mensual útil.</p></article>
             <article class="offering"><em>06 / INTEGRACIONES</em><h3>Encaja, no reemplaza</h3><p>Conecta alertas, error tracking y tus herramientas actuales en un solo flujo operativo.</p></article>
           </div>
@@ -337,7 +336,7 @@
               <li>Resuelve la causa raíz, no solo el síntoma</li>
               <li>Menos recurrencia = clientes más contentos</li>
             </ul>
-            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Agente nativo en Go.</b> Binario estático de ~8 MB, sin CGO, sin dependencias. Detecta servicios automáticamente, auto-registra en PAM, y reporta métricas de CPU, memoria, disco, red, Docker y Kubernetes — todo con un footprint mínimo.</p>
+            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Autodescubrimiento + eBPF.</b> El agente detecta lo que corre en cada host sin configuración. Cuando una métrica no alcanza, eBPF (huatuo) entra para hacer profiling profundo: traces de kernel, bloqueos de I/O, presión de memoria — el contexto que necesitás para resolver de verdad.</p>
           </div>
         </div>
       </section>
