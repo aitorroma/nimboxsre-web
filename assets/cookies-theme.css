@@ -1,0 +1,35 @@
+/* Ajusta vanilla-cookieconsent a la marca NimBox SRE: fondo oscuro (--ink),
+   botones en el naranja de acento (--accent), tipografía DM Sans. Se aplica
+   sobre #cc-main y vence al modo oscuro de la librería. */
+#cc-main,
+.cc--darkmode #cc-main {
+  --cc-font-family: "DM Sans", system-ui, sans-serif;
+  --cc-bg: #111215;
+  --cc-footer-bg: #111215;
+  --cc-primary-color: #f2f1ee;
+  --cc-secondary-color: #cfcdc8;
+  --cc-footer-color: #b9b9b6;
+  --cc-link-color: #f2f1ee;
+  --cc-overlay-bg: rgba(17, 18, 21, .6);
+
+  --cc-btn-primary-bg: #e8462b;
+  --cc-btn-primary-border-color: #e8462b;
+  --cc-btn-primary-hover-bg: #ce371f;
+  --cc-btn-primary-hover-border-color: #ce371f;
+  --cc-btn-primary-color: #fff;
+  --cc-btn-primary-hover-color: #fff;
+
+  /* Aceptar y Rechazar con el mismo peso visual (requisito AEPD). */
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-border-color: #4a4b45;
+  --cc-btn-secondary-hover-bg: #1c1d20;
+  --cc-btn-secondary-hover-border-color: #6a6b64;
+  --cc-btn-secondary-color: #f2f1ee;
+  --cc-btn-secondary-hover-color: #fff;
+
+  --cc-toggle-on-bg: #e8462b;
+  --cc-cookie-category-block-bg: #17181b;
+  --cc-cookie-category-block-border: #2a2b2e;
+}
+#cc-main .cm__btn,
+#cc-main .pm__btn { border-radius: 0; font-weight: 600; }
