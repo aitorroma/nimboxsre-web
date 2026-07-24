@@ -263,6 +263,23 @@
       .final .cta { background:var(--accent); } .final .cta:hover { background:#fff; color:var(--ink); }
       .final .cta-ghost { color:#fff; border-color:#4a4b45; } .final .cta-ghost:hover { background:#fff; color:var(--ink); border-color:#fff; }
       .final-actions { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+      .lead-form { width:min(720px,100%); margin:42px auto 0; padding:28px; background:#fff; color:var(--ink); text-align:left; }
+      .lead-form-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+      .lead-form-field { display:grid; gap:7px; }
+      .lead-form-field.full { grid-column:1 / -1; }
+      .lead-form label { font-size:.8rem; font-weight:700; }
+      .lead-form input, .lead-form select, .lead-form textarea { width:100%; border:1px solid #bdbab3; border-radius:0; padding:12px; color:var(--ink); background:#fff; font:inherit; font-size:.94rem; }
+      .lead-form textarea { min-height:116px; resize:vertical; }
+      .lead-form input:focus, .lead-form select:focus, .lead-form textarea:focus { outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+      .lead-form-consent { display:flex; align-items:flex-start; gap:10px; margin-top:20px; color:#4c4c49; font-size:.82rem; line-height:1.5; }
+      .lead-form-consent input { width:17px; height:17px; margin:1px 0 0; accent-color:var(--accent); flex:none; }
+      .lead-form-consent a { color:var(--accent); font-weight:700; text-decoration:underline; }
+      .lead-form-submit { display:inline-flex; align-items:center; gap:9px; margin-top:22px; border:0; border-radius:0; padding:13px 17px; cursor:pointer; background:var(--accent); color:#fff; font:600 .94rem "DM Sans",sans-serif; transition:background .2s,transform .2s; }
+      .lead-form-submit:hover { background:var(--ink); transform:translateY(-1px); }
+      .lead-form-submit:disabled { cursor:wait; opacity:.7; }
+      .lead-form-status { min-height:1.4em; margin:14px 0 0; font-size:.84rem; line-height:1.5; }
+      .lead-form-status[data-state="success"] { color:#286d35; } .lead-form-status[data-state="error"] { color:#b42e1c; }
+      .lead-form-hp { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
 
       footer { background:#0b0c0e; color:#fff; padding:30px 0; }
       .footer-in { display:flex; justify-content:space-between; gap:14px; font-size:.78rem; color:#8f8f8b; }
@@ -305,6 +322,7 @@
         .offerings { grid-template-columns:1fr; gap:0; }
         .offering,.offering:nth-child(3n+2),.offering:nth-child(3n+3){ padding:22px 0; border-right:0; min-height:0; }
         .outcomes-head{ gap:16px; margin-bottom:34px; }
+        .lead-form{ padding:22px 18px; } .lead-form-grid{ grid-template-columns:1fr; } .lead-form-field.full{ grid-column:auto; }
         .footer-in{ flex-direction:column; }
       }
     </style>
@@ -320,7 +338,7 @@
           <a href="#plataforma">Plataforma</a>
           <a href="#faq">FAQ</a>
           <a href="https://app.nimboxsre.com/" class="login">Acceder</a>
-          <a href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE" class="cta">Pedir demo <span>↗</span></a>
+          <a href="#demo" class="cta">Pedir demo <span>↓</span></a>
         </div>
       </nav>
     </header>
@@ -333,7 +351,7 @@
           <h1>Resuelve más incidencias con <em>el mismo equipo</em>.</h1>
           <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente con autodescubrimiento, PAM nativo y <b>profiling eBPF</b> que opera hosts <b>tras NAT, sin abrir SSH</b>. Incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
           <div class="hero-actions">
-            <a class="cta" href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
+            <a class="cta" href="#demo">Pedir una demo <span>↓</span></a>
             <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
           </div>
           <div class="hero-note"><span>●</span> <span>Agente con <b>autodescubrimiento</b> — un solo comando, detecta todo solo. Ejecuta runbooks en cualquier host, <b>incluso tras CGNAT</b>.</span></div>
@@ -549,15 +567,48 @@
       </section>
 
       <!-- FINAL CTA -->
-      <section class="final">
+      <section class="final" id="demo">
         <div class="wrap section-pad reveal">
           <div class="eyebrow" style="color:var(--mint)">Operación gestionada</div>
           <h2>Haz que cada incidente deje una mejora, no solo un cierre.</h2>
-          <p>Menos ruido, mejor respuesta y evidencia suficiente para operar con el mismo equipo, defender tu SLA y facturar sin arqueología.</p>
-          <div class="final-actions">
-            <a class="cta" href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
-            <a class="cta cta-ghost" href="mailto:aitor@nimbox360.com?subject=Piloto%20NimBox%20SRE">Hablar de un piloto</a>
-          </div>
+          <p>Cuéntanos qué operas y te enseñamos cómo encaja NimBox SRE en una demo corta.</p>
+          <form class="lead-form" id="lead-form" data-webhook-url="https://api.nimbox360.com/webhook/nimbox-sre-demo-8c4be615" novalidate>
+            <div class="lead-form-grid">
+              <div class="lead-form-field">
+                <label for="lead-name">Nombre *</label>
+                <input id="lead-name" name="name" type="text" autocomplete="name" required />
+              </div>
+              <div class="lead-form-field">
+                <label for="lead-email">Email profesional *</label>
+                <input id="lead-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="lead-form-field">
+                <label for="lead-company">Empresa</label>
+                <input id="lead-company" name="company" type="text" autocomplete="organization" />
+              </div>
+              <div class="lead-form-field">
+                <label for="lead-hosts">Hosts que gestionas</label>
+                <select id="lead-hosts" name="host_count">
+                  <option value="">Selecciona una opción</option>
+                  <option value="1-49">1–49</option>
+                  <option value="50-500">50–500</option>
+                  <option value="501-1000">501–1.000</option>
+                  <option value="1000+">Más de 1.000</option>
+                </select>
+              </div>
+              <div class="lead-form-field full">
+                <label for="lead-message">¿Qué quieres mejorar? <span aria-hidden="true">(opcional)</span></label>
+                <textarea id="lead-message" name="message"></textarea>
+              </div>
+            </div>
+            <div class="lead-form-hp" aria-hidden="true">
+              <label for="lead-website">No rellenes este campo</label>
+              <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <label class="lead-form-consent"><input name="privacy_consent" type="checkbox" value="yes" required /> <span>He leído y acepto la <a href="/privacidad/">Política de Privacidad</a>. *</span></label>
+            <button class="lead-form-submit" type="submit">Solicitar demo <span>↗</span></button>
+            <p class="lead-form-status" id="lead-form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </section>
     </main>
@@ -577,6 +628,29 @@
           entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
         }, { threshold:.12, rootMargin:'0px 0px -8% 0px' });
         els.forEach(function(e){ io.observe(e); });
+      })();
+      (function(){
+        var form = document.getElementById('lead-form');
+        var status = document.getElementById('lead-form-status');
+        if(!form || !status) return;
+        form.addEventListener('submit', function(event){
+          event.preventDefault();
+          var webhookUrl = form.getAttribute('data-webhook-url');
+          var submit = form.querySelector('button[type="submit"]');
+          function message(text, state){ status.textContent = text; status.setAttribute('data-state', state || ''); }
+          if(!form.checkValidity()){ form.reportValidity(); return; }
+          if(form.elements.website.value){ message('No se ha podido enviar la solicitud.', 'success'); form.reset(); return; }
+          if(!webhookUrl){ message('El formulario se está preparando. Escríbenos a aitor@nimbox360.com para solicitar una demo.', 'error'); return; }
+          submit.disabled = true;
+          message('Enviando solicitud…');
+          var data = Object.fromEntries(new FormData(form).entries());
+          data.source = 'nimboxsre.com';
+          fetch(webhookUrl, { method:'POST', mode:'cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
+            .then(function(response){ if(!response.ok) throw new Error('Webhook response was not OK'); return response; })
+            .then(function(){ form.reset(); message('Gracias. Hemos recibido tu solicitud y te contactaremos pronto.', 'success'); })
+            .catch(function(){ message('No se ha podido enviar la solicitud. Inténtalo de nuevo o escribe a aitor@nimbox360.com.', 'error'); })
+            .finally(function(){ submit.disabled = false; });
+        });
       })();
       (function(){
         var burger = document.querySelector('.hamburger');

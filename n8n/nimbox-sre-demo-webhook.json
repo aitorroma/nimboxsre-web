@@ -1,0 +1,243 @@
+{
+  "name": "NimBox SRE · Captura de solicitudes de demo",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "nimbox-sre-demo-8c4be615",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "0fd56060-b870-4e18-bb3f-4bebad0f6043",
+      "name": "Webhook · Solicitud de demo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -520,
+        0
+      ],
+      "webhookId": "6299bc1c-36da-4bee-8ac5-8c4a3eb2bcee"
+    },
+    {
+      "parameters": {
+        "jsCode": "const incoming = $input.first().json.body ?? $input.first().json;\nlet body = incoming;\nif (typeof incoming === 'string') {\n  try { body = JSON.parse(incoming); } catch { body = {}; }\n}\n\nconst text = (value, max = 2000) => String(value ?? '').trim().slice(0, max);\nconst name = text(body.name, 160);\nconst email = text(body.email, 254).toLowerCase();\nconst honeypot = text(body.website, 200);\nconst hasEmail = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);\nconst hasConsent = body.privacy_consent === 'yes' || body.privacy_consent === true;\nconst isValid = !honeypot && Boolean(name) && hasEmail && hasConsent;\n\nreturn [{\n  json: {\n    valid: isValid ? 'yes' : 'no',\n    validation: { has_name: Boolean(name), has_email: hasEmail, has_consent: hasConsent, honeypot_filled: Boolean(honeypot) },\n    lead: {\n      name,\n      email,\n      company: text(body.company, 160),\n      host_count: text(body.host_count, 40),\n      message: text(body.message, 4000),\n      privacy_consent: hasConsent,\n      source: text(body.source, 120) || 'nimboxsre.com',\n      submitted_at: new Date().toISOString()\n    }\n  }\n}];"
+      },
+      "id": "944c4666-f46b-42b1-b1e1-5f3bf5a35aa9",
+      "name": "Normalizar y validar lead",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -280,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1713f782-b8c0-4db6-9f5f-0a40842baf86",
+              "leftValue": "={{ $json.valid }}",
+              "rightValue": "yes",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1bdd6d48-8f35-42dc-82dc-ebc33829387a",
+      "name": "¿Lead válido?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -60,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://crm.aitorroma.com/api/leads",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "specifyBody": "keypair",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "source", "value": "6" },
+            { "name": "status", "value": "2" },
+            { "name": "assigned", "value": "1" },
+            { "name": "name", "value": "={{ $json.lead.name }}" },
+            { "name": "contact", "value": "={{ $json.lead.name }}" },
+            { "name": "email", "value": "={{ $json.lead.email }}" },
+            { "name": "company", "value": "={{ $json.lead.company }}" },
+            { "name": "default_language", "value": "spanish" },
+            { "name": "description", "value": "=Solicitud de demo desde {{ $json.lead.source }}\\nHosts: {{ $json.lead.host_count || 'No indicado' }}\\nMensaje: {{ $json.lead.message || 'Sin mensaje' }}\\nConsentimiento RGPD: sí\\nRecibido: {{ $json.lead.submitted_at }}" }
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "5ae6897d-3f18-4d82-866f-e1d25bd43dda",
+      "name": "Crear lead en PerfexCRM",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        180,
+        -100
+      ],
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 1000
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { ok: true, accepted: true } }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "https://nimboxsre.com"
+              }
+            ]
+          }
+        }
+      },
+      "id": "82d4c926-36ce-4bf8-bffe-2c9dcc581d3e",
+      "name": "Responder · Lead creado",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        680,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json;\nif (response.status !== true) {\n  throw new Error(`PerfexCRM no confirmó la creación del lead: ${response.message ?? 'respuesta no válida'}`);\n}\nreturn $input.all();"
+      },
+      "id": "e9d55d4f-c620-4f06-a8f0-3d513b0091f0",
+      "name": "Confirmar creación en PerfexCRM",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { ok: true, accepted: false } }}",
+        "options": {
+          "responseCode": 200,
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Access-Control-Allow-Origin",
+                "value": "https://nimboxsre.com"
+              }
+            ]
+          }
+        }
+      },
+      "id": "9d421cce-0fe3-42e8-8e61-bbe6c6ae51af",
+      "name": "Responder · Lead rechazado",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        180,
+        120
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook · Solicitud de demo": {
+      "main": [
+        [
+          {
+            "node": "Normalizar y validar lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalizar y validar lead": {
+      "main": [
+        [
+          {
+            "node": "¿Lead válido?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "¿Lead válido?": {
+      "main": [
+        [
+          {
+            "node": "Responder · Lead rechazado",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Crear lead en PerfexCRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Crear lead en PerfexCRM": {
+      "main": [
+        [
+          {
+            "node": "Confirmar creación en PerfexCRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Confirmar creación en PerfexCRM": {
+      "main": [
+        [
+          {
+            "node": "Responder · Lead creado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "20cad507-6214-4a90-aabd-0a2516e0e905",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
