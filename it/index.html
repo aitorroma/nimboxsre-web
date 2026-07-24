@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="es">
+<html lang="it">
   <head>
+    <base href="/it/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="NimBox SRE: agente propio con autodescubrimiento, PAM nativo y profiling eBPF que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
+    <meta name="description" content="NimBox SRE: agente proprietario con rilevamento automatico, PAM nativo e profilazione eBPF che gestisce gli host dietro NAT senza aprire SSH. Vivi con il tuo monitoraggio attuale. Incidenti, runbook approvati ed evidenze mensili. Senza montare un NOC 24×7." />
     <meta name="theme-color" content="#faf9f6" />
-    <title>NimBox SRE — Opera hosts tras NAT y resuelve más incidencias con el mismo equipo</title>
+    <title>NimBox SRE: gestione dell'host dopo NAT e risoluzione dei problemi della macchina</title>
     <link rel="icon" href="assets/favicon.ico?v=3" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3" />
@@ -339,16 +340,16 @@
   <body>
     <header class="top">
       <nav class="wrap">
-        <a class="brand" href="#inicio" aria-label="NimBox SRE, inicio"><img class="brand-logo" src="assets/nimbox-sre-logo.png?v=2" alt="NimBox SRE" /></a>
-        <button class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
+        <a class="brand" href="#inicio" aria-label="NimBox SRE, avvia"><img class="brand-logo" src="assets/nimbox-sre-logo.png?v=2" alt="NimBox SRE" /></a>
+        <button class="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
         <div class="links" id="nav-links">
-          <a href="#para-quien">Para quién</a>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#plataforma">Plataforma</a>
-          <a href="#faq">FAQ</a>
-          <a href="https://app.nimboxsre.com/" class="login">Acceder</a>
-          <a href="#demo" class="cta">Pedir demo <span>↓</span></a>
-          <span class="locale-switch" aria-label="Idioma"><a class="active" href="/">ES</a><a href="/en/">EN</a><a href="/it/">IT</a></span>
+          <a href="#para-quien">per chi</a>
+          <a href="#como-funciona">Come funziona</a>
+          <a href="#plataforma">Piattaforma</a>
+          <a href="#faq">Domande frequenti</a>
+          <a href="https://app.nimboxsre.com/" class="login">Accesso</a>
+          <a href="#demo" class="cta">Richiedi una dimostrazione <span>↓</span></a>
+          <span class="locale-switch" aria-label="Language"><a href="/">ES</a><a href="/en/">EN</a><a href="/it/" class="active">IT</a></span>
         </div>
       </nav>
     </header>
@@ -357,39 +358,39 @@
       <!-- HERO -->
       <section id="inicio" class="wrap hero">
         <div class="hero-copy">
-          <div class="eyebrow">Operación SRE gestionada · para MSPs y software houses</div>
-          <h1>Resuelve más incidencias con <em>el mismo equipo</em>.</h1>
-          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente con autodescubrimiento, PAM nativo y <b>profiling eBPF</b> que opera hosts <b>tras NAT, sin abrir SSH</b>. Incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
+          <div class="eyebrow">Operazioni SRE gestite per MSP e software house</div>
+          <h1>Risolvi più incidenti con <em>la stessa squadra</em>.</h1>
+          <p class="lead">NimBox SRE è il livello operativo che trasforma i tuoi avvisi in un servizio fatturabile: un agente con rilevamento automatico, PAM nativo e <b>profilazione eBPF</b> che gestisce gli host <b>dopo NAT, senza aprire SSH</b>. Incidenti, runbook approvati e prove mensili pronte per il tuo SLA. <b>Senza montare un NOC 24×7.</b></p>
           <div class="hero-actions">
-            <a class="cta" href="#demo">Pedir una demo <span>↓</span></a>
-            <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
+            <a class="cta" href="#demo">Richiedi una demo <span>↓</span></a>
+            <a class="cta cta-ghost" href="#como-funciona">Guarda come funziona</a>
           </div>
-          <div class="hero-note"><span>●</span> <span>Agente con <b>autodescubrimiento</b> — un solo comando, detecta todo solo. Ejecuta runbooks en cualquier host, <b>incluso tras CGNAT</b>.</span></div>
+          <div class="hero-note"><span>●</span> <span>agente con <b>scoperta di sé</b> — un solo comando, rileva tutto da solo. Esegui runbook su qualsiasi host, <b>anche dopo CGNAT</b>.</span></div>
         </div>
-        <div class="hero-art" aria-label="Panel de rendimiento y SLA de agentes en NimBox SRE">
+        <div class="hero-art" aria-label="Prestazioni dell'agente e dashboard SLA in NimBox SRE">
           <div class="shape"></div>
-          <figure class="product-shot"><img src="assets/agent-performance.png?v=2" alt="Panel de rendimiento, KPI y SLA de agentes de NimBox SRE" loading="eager" /></figure>
+          <figure class="product-shot"><img src="assets/agent-performance.png?v=2" alt="Dashboard su prestazioni, KPI e SLA dell'agente NimBox SRE" loading="eager" /></figure>
         </div>
       </section>
 
       <!-- STACK STRIP -->
       <div class="stack">
         <div class="wrap stack-in">
-          <span class="lbl">SE INTEGRA CON LO QUE YA USAS</span>
-          <b>Autodescubrimiento</b><b>PAM integrado</b><b>Ejecución tras NAT</b><b>Profiling eBPF</b><b>Monit</b><b>OpenTelemetry</b><b>Prometheus</b><b>Webhooks</b>
+          <span class="lbl">SI INTEGRA CON QUELLO CHE GIÀ UTILIZZI</span>
+          <b>Scoperta di sé</b><b>PAM integrato</b><b>Esecuzione dopo NAT</b><b>Profilazione eBPF</b><b>Monit</b><b>OpenTelemetria</b><b>Prometeo</b><b>Webhook</b>
         </div>
       </div>
 
       <!-- PAIN / PARA QUIÉN -->
       <section id="para-quien" class="wrap section-pad pain reveal">
-        <div class="eyebrow">Gestionas infra de varios clientes</div>
-        <h2>Ya monitorizas. Aun así, el servicio no se ve.</h2>
-        <p class="lead-p" style="max-width:720px">Tienes 50–500 hosts repartidos entre pymes, un equipo contenido y clientes que pagan mantenimiento o SLA. El problema no es detectar: es <b>operar, controlar y demostrar</b> lo que hace tu equipo.</p>
+        <div class="eyebrow">Gestire in modo insufficiente diversi client</div>
+        <h2>Stai già monitorando. Anche così, il servizio non si vede.</h2>
+        <p class="lead-p" style="max-width:720px">Hai 50-500 host divisi tra PMI, un team contenuto e clienti che pagano manutenzione o SLA. Il problema non è rilevarlo: lo è <b>operare, controllare e dimostrare</b> cosa fa la tua squadra</p>
         <div class="pain-grid">
-          <div class="pain-item"><span class="x">✕</span><div><b>Las alertas viven en WhatsApp</b><span>Llegan por chat, se resuelven de memoria y no queda rastro de quién tocó qué.</span></div></div>
-          <div class="pain-item"><span class="x">✕</span><div><b>El cierre de mes es arqueología</b><span>Reconstruís la actividad a mano para justificar horas y defender el SLA.</span></div></div>
-          <div class="pain-item"><span class="x">✕</span><div><b>Todo depende del sénior</b><span>El conocimiento está en dos cabezas; el resto escala tickets hacia arriba.</span></div></div>
-          <div class="pain-item"><span class="x">✕</span><div><b>El 24×7 real es inasumible</b><span>Un NOC de verdad no cuadra con 3–15 técnicos y márgenes de mantenimiento.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>Avvisi in diretta su WhatsApp</b><span>Arrivano via chat, si risolvono a memoria e non c'è traccia di chi ha toccato cosa.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>La fine del mese è l'archeologia</b><span>Ricostruisci manualmente l'attività per giustificare le ore e difendere lo SLA.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>Tutto dipende dall'anziano</b><span>La conoscenza è in due teste; il resto aumenta i biglietti verso l'alto.</span></div></div>
+          <div class="pain-item"><span class="x">✕</span><div><b>Il vero 24×7 è insostenibile</b><span>Un vero NOC non può contenere 3-15 tecnici e margini di manutenzione.</span></div></div>
         </div>
       </section>
 
@@ -397,28 +398,28 @@
       <section id="como-funciona" class="how">
         <div class="wrap section-pad reveal">
           <div class="how-head">
-            <div class="eyebrow">De la alerta al informe</div>
-            <h2>Cómo funciona, en tres pasos.</h2>
-            <p>Conectas lo que ya tienes, defines cómo se actúa y cada incidencia deja evidencia. Tu equipo opera con contexto; tú facturas con pruebas.</p>
+            <div class="eyebrow">Dall'allarme alla segnalazione</div>
+            <h2>Come funziona, in tre passaggi.</h2>
+            <p>Colleghi ciò che già hai, definisci come agire e ogni incidente lascia una prova. Il tuo team opera con il contesto; fatturi con prova.</p>
           </div>
           <div class="steps">
             <div class="step">
               <div class="n">01</div>
-              <h3>Conecta hosts y alertas</h3>
-              <p>Monit (nativo), OpenTelemetry y Prometheus entran a una sola capa operativa. Contexto por host: estado, métricas, procesos e historial de incidencias.</p>
-              <span class="tag">// no montas otro silo</span>
+              <h3>Connetti host e avvisi</h3>
+              <p>Monit (nativo), OpenTelemetry e Prometheus rientrano in un unico livello operativo. Contesto per host: stato, parametri, processi e cronologia degli incidenti.</p>
+              <span class="tag">// non impostare un altro silo</span>
             </div>
             <div class="step">
               <div class="n">02</div>
-              <h3>Se instala y se descubre solo</h3>
-              <p>Un solo comando: descarga el binario, autodetecta los servicios en marcha (nginx, postgres, docker, redis…), registra el host en PAM y empieza a reportar. Sin configurar nada, sin abrir puertos entrantes — funciona igual tras NAT.</p>
-              <span class="tag">// de cero a operando en 60 segundos</span>
+              <h3>Si installa e scopre se stesso</h3>
+              <p>Un unico comando: scarica il binario, rileva automaticamente i servizi in esecuzione (nginx, postgres, docker, redis...), registra l'host in PAM e avvia il reporting. Senza configurare nulla, senza aprire le porte in entrata, funziona allo stesso modo dopo il NAT.</p>
+              <span class="tag">// da zero all'operando in 60 secondi</span>
             </div>
             <div class="step">
               <div class="n">03</div>
-              <h3>Evidencia lista para facturar</h3>
-              <p>Cada cierre deja propiedad, severidad, sesión, tiempo y cumplimiento de SLA. El informe mensual se genera solo, no se reconstruye.</p>
-              <span class="tag">// servicio que se explica</span>
+              <h3>Prove pronte per la fatturazione</h3>
+              <p>Ogni arresto lascia proprietà, gravità, sessione, ora e conformità allo SLA. Il report mensile viene generato autonomamente e non viene ricostruito.</p>
+              <span class="tag">// servizio spiegato</span>
             </div>
           </div>
         </div>
@@ -429,34 +430,34 @@
         <div class="wrap section-pad reveal">
           <div class="outcomes-head">
             <div>
-              <div class="eyebrow">Una capa, no otro dashboard</div>
-              <h2>Todo lo que necesita tu operación.</h2>
+              <div class="eyebrow">Un livello, non un'altra dashboard</div>
+              <h2>Tutto ciò di cui la tua attività ha bisogno.</h2>
             </div>
-            <p>Pensada para MSPs, software houses y equipos de infraestructura que necesitan convertir operaciones complejas en resultados claros —y facturables— para sus clientes.</p>
+            <p>Progettato per MSP, software house e team infrastrutturali che hanno bisogno di trasformare operazioni complesse in risultati chiari e fatturabili per i propri clienti.</p>
           </div>
           <div class="offerings">
-            <article class="offering"><em>01 / MONITORIZACIÓN</em><h3>Contexto por host</h3><p>Estado, métricas, procesos e historial de incidencias reunidos donde hacen falta.</p></article>
-            <article class="offering"><em>02 / INCIDENCIAS</em><h3>Respuesta coordinada</h3><p>Propiedad, severidad, evidencia y SLA para cerrar el ciclo operativo completo.</p></article>
-            <article class="offering"><em>03 / AGENTE</em><h3>Autodescubrimiento y eBPF</h3><p>Binario único de un fichero, sin dependencias. Detecta servicios, procesos y contenedores solo, opera tras NAT y activa profiling eBPF —latencia de I/O, pilas de kernel— cuando la métrica no basta.</p></article>
-            <article class="offering"><em>04 / ACCESO PRIVILEGIADO</em><h3>PAM nativo, sin fricción</h3><p>El agente se auto-registra en PAM al instalarse. Cada conexión SSH queda auditada. Sin contraseñas en tráfico, sin configuración manual.</p></article>
-            <article class="offering"><em>05 / INFORMES</em><h3>Servicio que se puede explicar</h3><p>Convierte actividad, resoluciones y cumplimiento de SLA en un informe mensual útil.</p></article>
-            <article class="offering"><em>06 / INTEGRACIONES</em><h3>Encaja, no reemplaza</h3><p>Conecta alertas, error tracking y tus herramientas actuales en un solo flujo operativo.</p></article>
+            <article class="offering"><em>01 / MONITORAGGIO</em><h3>Contesto per host</h3><p>Stato, metriche, processi e cronologia degli incidenti raccolti dove necessario.</p></article>
+            <article class="offering"><em>02 / INCIDENTI</em><h3>Risposta coordinata</h3><p>Proprietà, gravità, prove e SLA per chiudere il ciclo operativo completo.</p></article>
+            <article class="offering"><em>03/AGENTE</em><h3>Scoperta di sé ed eBPF</h3><p>Singolo binario di un file, senza dipendenze. Rileva solo servizi, processi e contenitori, opera dietro NAT e attiva la profilazione eBPF (latenza I/O, stack del kernel) quando la metrica non è sufficiente.</p></article>
+            <article class="offering"><em>04 / ACCESSO PRIVILEGIATO</em><h3>PAM nativo, senza attriti</h3><p>L'agente si registra automaticamente in PAM al momento dell'installazione. Ogni connessione SSH viene controllata. Nessuna password nel traffico, nessuna configurazione manuale.</p></article>
+            <article class="offering"><em>05 / RAPPORTI</em><h3>Servizio che può essere spiegato</h3><p>Trasforma attività, risoluzioni e conformità agli SLA in un utile report mensile.</p></article>
+            <article class="offering"><em>06 / INTEGRAZIONI</em><h3>Si adatta, non sostituisce</h3><p>Connetti avvisi, tracciamento degli errori e i tuoi strumenti attuali in un unico flusso operativo.</p></article>
           </div>
         </div>
       </section>
 
       <!-- PROOF 1: runbooks -->
       <section class="wrap section-pad proof reveal">
-        <figure class="proof-shot"><img src="assets/runbooks.png?v=2" alt="Runbooks aprobados y versionados para remediación asistida por agentes en NimBox SRE" loading="lazy" /></figure>
+        <figure class="proof-shot"><img src="assets/runbooks.png?v=2" alt="Runbook approvati e con versione per la correzione assistita da agenti in NimBox SRE" loading="lazy" /></figure>
         <div class="proof-copy">
-          <div class="eyebrow">Menos dependencia del sénior</div>
-          <h2>El conocimiento deja de vivir en dos cabezas.</h2>
-          <p>Convierte cada resolución en un runbook aprobado, versionado y vinculado al host o servicio afectado. El agente —o cualquier técnico— actúa dentro de un marco que tu equipo revisa y controla.</p>
+          <div class="eyebrow">Meno dipendenza dall'anziano</div>
+          <h2>La conoscenza smette di vivere in due teste.</h2>
+          <p>Converte ogni risoluzione in un runbook approvato, con versione e collegato all'host o al servizio interessato. L'agente, o qualsiasi tecnico, agisce all'interno di un quadro che il tuo team esamina e controlla.</p>
           <ul class="proof-points">
-            <li>Runbooks aprobados y versionados (v1, v2, v3…)</li>
-            <li>Ámbito por host, servicio o alerta</li>
-            <li>Se ejecutan en el host aunque esté tras NAT</li>
-            <li>Revocables en un clic, auditables siempre</li>
+            <li>Runbook approvati e con versione (v1, v2, v3...)</li>
+            <li>Ambito per host, servizio o avviso</li>
+            <li>Vengono eseguiti sull'host anche se è dietro NAT</li>
+            <li>Revocabile con un clic, sempre verificabile</li>
           </ul>
         </div>
       </section>
@@ -466,21 +467,21 @@
         <div class="wrap section-pad reveal">
           <div class="nat-grid">
             <div>
-              <div class="eyebrow">Sin abrir puertos · sin VPN</div>
-              <h2>Opera hosts que no puedes ni alcanzar.</h2>
-              <p>El agente trabaja por <b style="color:#fff">pull</b>: sale él hacia NimBox por HTTPS y recoge lo que tiene que ejecutar. Los runbooks corren en la máquina aunque esté detrás de NAT, CGNAT o un router doméstico de cliente — sin exponer SSH, sin abrir un solo puerto entrante, sin túneles que mantener.</p>
+              <div class="eyebrow">Senza aprire porte · senza VPN</div>
+              <h2>Gestisci host che non puoi nemmeno raggiungere.</h2>
+              <p>L'agente lavora per <b style="color:#fff">tiro</b>: Va a NimBox tramite HTTPS e preleva ciò che deve eseguire. I runbook vengono eseguiti sulla macchina anche se si trova dietro NAT, CGNAT o un router domestico del client, senza esporre SSH, senza aprire una singola porta in entrata, senza tunnel da mantenere.</p>
               <ul class="nat-points">
-                <li>Cero conexiones entrantes: nada que exponer a internet</li>
-                <li>Credencial única por host, revocable y auditada</li>
-                <li>Llega a la caja del cliente tras su router, como cualquier otra</li>
+                <li>Zero connessioni in entrata: niente da esporre su internet</li>
+                <li>Credenziali univoche per host, revocabili e controllate</li>
+                <li>Arriva alla cassa del cliente dopo il router, come qualsiasi altro</li>
               </ul>
             </div>
             <div class="nat-diagram" aria-hidden="true">
-              <div class="row"><span>agente</span><span class="arrow">──HTTPS──▶</span><span>NimBox SRE</span></div>
-              <div class="row tag">// el agente inicia la conexión, saliente</div>
-              <div class="row" style="margin-top:14px"><span>NimBox SRE</span><span class="blocked">──SSH──✕</span><span>host tras NAT</span></div>
-              <div class="row tag">// nadie entra: no hace falta</div>
-              <div class="row" style="margin-top:14px"><span class="arrow">▶</span><span>runbook aprobado → se ejecuta en el host</span></div>
+              <div class="row"><span>agente</span><span class="arrow">──HTTPS──♥</span><span>NimBox SRE</span></div>
+              <div class="row tag">// l'agente avvia la connessione, in uscita</div>
+              <div class="row" style="margin-top:14px"><span>NimBox SRE</span><span class="blocked">──SSH──✕</span><span>host dopo NAT</span></div>
+              <div class="row tag">// non entra nessuno: non è necessario</div>
+              <div class="row" style="margin-top:14px"><span class="arrow">▶</span><span>runbook approvato → viene eseguito sull'host</span></div>
             </div>
           </div>
         </div>
@@ -489,17 +490,17 @@
       <!-- PROOF 2: host detail -->
       <section class="outcomes">
         <div class="wrap section-pad proof rev alt reveal">
-          <figure class="proof-shot"><img src="assets/modern-collector-host.png?v=2" alt="Vista de detalle de un host en NimBox SRE con métricas de sistema, historial de incidencias y procesos monitorizados" loading="lazy" /></figure>
+          <figure class="proof-shot"><img src="assets/modern-collector-host.png?v=2" alt="Visualizzazione dettagliata di un host in NimBox SRE con parametri di sistema, cronologia degli incidenti e processi monitorati" loading="lazy" /></figure>
           <div class="proof-copy">
-            <div class="eyebrow">Del síntoma a la causa raíz</div>
-            <h2>No parchea la alerta: encuentra el origen.</h2>
-            <p>El agente se centra en diagnosticar y, con los datos —métricas, procesos, carga e historial en una sola vista por host—, encuentra el origen del problema para dejarlo resuelto de verdad. Menos incidencias que vuelven, y clientes más contentos.</p>
+            <div class="eyebrow">Dal sintomo alla causa principale</div>
+            <h2>Non corregge l'avviso: trova la fonte.</h2>
+            <p>L'agente si concentra sulla diagnosi e, utilizzando dati (metriche, processi, carico e cronologia in un'unica visualizzazione per host), trova l'origine del problema per risolverlo veramente. Meno incidenti di ritorno e clienti più felici.</p>
             <ul class="proof-points">
-              <li>Diagnóstico basado en datos, no en corazonadas</li>
-              <li>Resuelve la causa raíz, no solo el síntoma</li>
-              <li>Menos recurrencia = clientes más contentos</li>
+              <li>Diagnosi basata su dati, non su intuizioni</li>
+              <li>Risolvi la causa principale, non solo il sintomo</li>
+              <li>Meno ricorrenza = clienti più felici</li>
             </ul>
-            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Autodescubrimiento + eBPF.</b> El agente detecta lo que corre en cada host sin configurar nada. Y cuando la métrica no alcanza, activa <b style="color:var(--ink)">profiling eBPF</b> sobre la marcha: histograma de latencia de I/O y pilas de kernel de los procesos bloqueados, con el tiempo exacto que pasan atascados. Se enciende solo donde el kernel lo soporta, sin agente pesado ni instrumentar nada.</p>
+            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Auto-scoperta + eBPF.</b> L'agente rileva ciò che è in esecuzione su ciascun host senza configurare nulla. E quando la metrica non basta, attiva <b style="color:var(--ink)">profilazione eBPF</b> al volo: istogramma della latenza I/O e stack del kernel dei processi bloccati, con il tempo esatto in cui rimangono bloccati. Si accende solo dove il kernel lo supporta, senza agenti pesanti o strumentazioni.</p>
           </div>
         </div>
       </section>
@@ -507,41 +508,41 @@
       <!-- ROI -->
       <section class="wrap section-pad reveal">
         <div class="roi-head">
-          <div class="eyebrow">Por qué mueve el margen</div>
-          <h2>Más servicio por técnico, sin ampliar el equipo.</h2>
-          <p>NimBox SRE no te da otro panel: te da capacidad. El mismo equipo cierra más incidencias, con procedimientos controlados y evidencia que puedes facturar cada mes.</p>
+          <div class="eyebrow">Perché il margine si sposta?</div>
+          <h2>Più assistenza per tecnico, senza ampliare il team.</h2>
+          <p>NimBox SRE non ti dà un altro pannello: ti dà capacità. Lo stesso team chiude più incidenti, con procedure controllate ed evidenze fatturabili ogni mese.</p>
         </div>
         <div class="roi">
-          <div><b>+<span>incidencias</span></b><p>Más cierres por técnico gracias a runbooks y agentes que hacen el trabajo repetitivo.</p></div>
-          <div><b>MTTR <span>↓</span></b><p>Menos tiempo por incidencia: contexto por host y procedimiento a mano desde el primer minuto.</p></div>
-          <div><b>SLA <span>medible</span></b><p>Primera respuesta y resolución con objetivos configurables y cumplimiento visible.</p></div>
-          <div><b>Sin <span>NOC</span></b><p>Los agentes cubren la guardia: investigan y te piden permiso antes de actuar. Cobertura sin el coste de un 24×7 real.</p></div>
+          <div><b>+<span>incidenti</span></b><p>Più chiusure per tecnico grazie a runbook e agenti che svolgono lavori ripetitivi.</p></div>
+          <div><b>MTTR <span>↓</span></b><p>Meno tempo per incidente: contesto per host e procedura a portata di mano fin dal primo minuto.</p></div>
+          <div><b>SLA <span>misurabile</span></b><p>Prima risposta e risoluzione con obiettivi configurabili e conformità visibile.</p></div>
+          <div><b>Senza <span>NOC</span></b><p>Gli agenti coprono la guardia: indagano e chiedono il tuo permesso prima di agire. Copertura senza il costo di un vero servizio 24x7.</p></div>
         </div>
       </section>
 
       <!-- FIT / ICP -->
       <section class="fit">
         <div class="wrap section-pad reveal">
-          <div class="eyebrow">Encaje honesto</div>
-          <h2 style="margin-bottom:44px">¿Es NimBox SRE para ti?</h2>
+          <div class="eyebrow">pizzo onesto</div>
+          <h2 style="margin-bottom:44px">NimBox SRE fa per te?</h2>
           <div class="fit-grid">
             <div class="fit-card fit-yes">
-              <h3><span class="mk">✓</span> Encajas si…</h3>
+              <h3><span class="mk">✓</span> Sei adatto se...</h3>
               <ul>
-                <li><span class="mk">✓</span> Eres un MSP, software house o consultora DevOps/SysAdmin.</li>
-                <li><span class="mk">✓</span> Tienes 3–15 técnicos y 50–500 hosts entre varios clientes.</li>
-                <li><span class="mk">✓</span> Ya tienes monitorización + tickets + WhatsApp, pero sin capa de operación.</li>
-                <li><span class="mk">✓</span> Vendes mantenimiento, bolsa de horas o SLA.</li>
-                <li><span class="mk">✓</span> Quieres crecer sin montar un NOC/SOC 24×7.</li>
+                <li><span class="mk">✓</span> Sei un MSP, una software house o una società di consulenza DevOps/SysAdmin.</li>
+                <li><span class="mk">✓</span> Hai 3-15 tecnici e 50-500 host su più client.</li>
+                <li><span class="mk">✓</span> Hai già monitoraggio + ticket + WhatsApp, ma senza un livello operativo.</li>
+                <li><span class="mk">✓</span> Vendi manutenzione, pool di ore o SLA.</li>
+                <li><span class="mk">✓</span> Vuoi crescere senza creare un NOC/SOC 24×7.</li>
               </ul>
             </div>
             <div class="fit-card fit-no">
-              <h3><span class="mk">—</span> Aún no, si…</h3>
+              <h3><span class="mk">—</span> Non ancora, sì...</h3>
               <ul>
-                <li><span class="mk">—</span> Eres enterprise con NOC, SIEM y procesos ya muy maduros.</li>
-                <li><span class="mk">—</span> Eres un IT interno de una sola empresa (menor efecto multiplicador).</li>
-                <li><span class="mk">—</span> Eres una startup pequeña que se apaña con autoservicio.</li>
-                <li><span class="mk">—</span> No vendes operación como servicio a terceros.</li>
+                <li><span class="mk">—</span> Sei un'impresa con NOC, SIEM e processi già molto maturi.</li>
+                <li><span class="mk">—</span> Sei un IT interno di una singola azienda (effetto moltiplicatore inferiore).</li>
+                <li><span class="mk">—</span> Sei una piccola startup che si accontenta del self-service.</li>
+                <li><span class="mk">—</span> Non vendi l'operazione come servizio a terzi.</li>
               </ul>
             </div>
           </div>
@@ -551,79 +552,79 @@
       <!-- FAQ -->
       <section id="faq" class="wrap section-pad reveal">
         <div class="faq-head">
-          <div class="eyebrow">Antes de que preguntes</div>
-          <h2>Preguntas frecuentes.</h2>
+          <div class="eyebrow">Prima che tu lo chieda</div>
+          <h2>Domande frequenti.</h2>
         </div>
         <details open>
-          <summary>¿Sustituye a mi monitorización actual?</summary>
-          <p>No. NimBox SRE trae su propio agente ligero, pero <b>convive con tu monitorización existente</b>: se integra de forma nativa con Monit y admite OpenTelemetry (OTLP) y Prometheus, y convierte esas alertas en operación con contexto, evidencia y SLA. No cambias de herramienta ni migras nada — lo pones al lado de lo que ya tienes.</p>
+          <summary>Sostituisce il mio monitoraggio attuale?</summary>
+          <p>No. NimBox SRE viene fornito con il proprio agente leggero, ma <b>coesiste con il monitoraggio esistente</b>- Si integra nativamente con Monit e supporta OpenTelemetry (OTLP) e Prometheus e trasforma tali avvisi in operazioni con contesto, prove e SLA. Non cambi strumenti né migri nulla: lo metti accanto a ciò che già hai.</p>
         </details>
         <details>
-          <summary>¿Los agentes tocan producción por su cuenta?</summary>
-          <p>Nunca sin control. Los agentes solo ejecutan runbooks aprobados y versionados, con ámbito acotado por host o servicio, y todo acceso pasa por un PAM que registra y audita cada acción del agente en una sesión. Puedes revocar cualquier procedimiento en un clic.</p>
+          <summary>Gli agenti si occupano della produzione da soli?</summary>
+          <p>Mai senza controllo. Gli agenti eseguono solo runbook approvati e con versione, con ambito host o servizio, e tutti gli accessi passano attraverso un PAM che registra e controlla ogni azione dell'agente in una sessione. Puoi revocare qualsiasi procedura con un clic.</p>
         </details>
         <details>
-          <summary>¿Cuánto tardo en verlo funcionando?</summary>
-          <p>El objetivo es un piloto sobre un cliente real en días, no meses: conectas hosts y alertas, defines los primeros runbooks a partir de lo que ya resuelves a mano, y empiezas a acumular evidencia desde la primera guardia.</p>
+          <summary>Quanto tempo ci vuole per vederlo funzionare?</summary>
+          <p>L'obiettivo è pilotare un client reale in giorni, non mesi: colleghi host e avvisi, definisci i primi runbook in base a ciò che hai già risolto manualmente e inizi ad accumulare prove dal primo controllo.</p>
         </details>
         <details>
-          <summary>¿Qué gano en el cierre de mes?</summary>
-          <p>Cada incidencia deja propiedad, severidad, tiempo, sesión y cumplimiento de SLA. El informe mensual se genera con esa evidencia en lugar de reconstruirse a mano — lo usas para justificar horas, defender el SLA y demostrar el valor del servicio.</p>
+          <summary>Cosa guadagno a fine mese?</summary>
+          <p>Ogni incidente lascia proprietà, gravità, ora, sessione e conformità allo SLA. Il rapporto mensile viene generato da tali prove anziché ricostruito manualmente: lo usi per giustificare le ore, difendere lo SLA e dimostrare il valore del servizio.</p>
         </details>
         <details>
-          <summary>¿Cómo se compra?</summary>
-          <p>Empezamos con una demo corta sobre tu caso y un piloto acotado. Escríbenos a <a href="mailto:aitor@nimbox360.com" style="color:var(--accent);font-weight:600">aitor@nimbox360.com</a> y montamos una llamada para ver si encaja.</p>
+          <summary>Come acquistare?</summary>
+          <p>Iniziamo con una breve demo sul tuo caso e un progetto pilota limitato. Scrivici a <a href="mailto:aitor@nimbox360.com" style="color:var(--accent);font-weight:600">aitor@nimbox360.com</a> e fissiamo una chiamata per vedere se va bene.</p>
         </details>
       </section>
 
       <!-- FINAL CTA -->
       <section class="final" id="demo">
         <div class="wrap section-pad reveal">
-          <div class="eyebrow" style="color:var(--mint)">Operación gestionada</div>
-          <h2>Haz que cada incidente deje una mejora, no solo un cierre.</h2>
-          <p>Cuéntanos qué operas y te enseñamos cómo encaja NimBox SRE en una demo corta.</p>
+          <div class="eyebrow" style="color:var(--mint)">Operazione gestita</div>
+          <h2>Fai in modo che ogni incidente lasci un miglioramento, non solo una conclusione.</h2>
+          <p>Raccontaci cosa operi e ti mostreremo come si adatta NimBox SRE in una breve demo.</p>
           <form class="lead-form" id="lead-form" data-webhook-url="https://api.nimbox360.com/webhook/nimbox-sre-demo-8c4be615" novalidate>
             <div class="lead-form-top">
               <div>
-                <span class="lead-form-kicker">01 / Contexto operativo</span>
-                <p class="lead-form-title">Cuéntanos qué necesitas operar.</p>
+                <span class="lead-form-kicker">01 / Contesto operativo</span>
+                <p class="lead-form-title">Raccontaci cosa ti serve per operare.</p>
               </div>
-              <div class="lead-form-meta" aria-label="Detalles de la demo"><span>15 min</span><span>Sin compromiso</span></div>
+              <div class="lead-form-meta" aria-label="Dettagli dimostrativi"><span>15 minuti</span><span>Nessun impegno</span></div>
             </div>
             <div class="lead-form-grid">
               <div class="lead-form-field">
-                <label for="lead-name">Nombre *</label>
-                <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required />
+                <label for="lead-name">Nome *</label>
+                <input id="lead-name" name="name" type="text" autocomplete="name" placeholder="il tuo nome" required />
               </div>
               <div class="lead-form-field">
-                <label for="lead-email">Email profesional *</label>
-                <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com" required />
+                <label for="lead-email">E-mail professionale *</label>
+                <input id="lead-email" name="email" type="email" autocomplete="email" placeholder="nome@azienda.com" required />
               </div>
               <div class="lead-form-field">
-                <label for="lead-company">Empresa</label>
-                <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nombre de la empresa" />
+                <label for="lead-company">Azienda</label>
+                <input id="lead-company" name="company" type="text" autocomplete="organization" placeholder="Nome dell'azienda" />
               </div>
               <div class="lead-form-field">
-                <label for="lead-hosts">Hosts que gestionas</label>
+                <label for="lead-hosts">Host che gestisci</label>
                 <select id="lead-hosts" name="host_count">
-                  <option value="">Selecciona una opción</option>
+                  <option value="">Seleziona un'opzione</option>
                   <option value="1-49">1–49</option>
                   <option value="50-500">50–500</option>
                   <option value="501-1000">501–1.000</option>
-                  <option value="1000+">Más de 1.000</option>
+                  <option value="1000+">Più di 1.000</option>
                 </select>
               </div>
               <div class="lead-form-field full">
-                <label for="lead-message">¿Qué quieres mejorar? <span aria-hidden="true">(opcional)</span></label>
-                <textarea id="lead-message" name="message" placeholder="Por ejemplo: reducir MTTR, operar clientes tras NAT o justificar el SLA."></textarea>
+                <label for="lead-message">Cosa vuoi migliorare? <span aria-hidden="true">(opzionale)</span></label>
+                <textarea id="lead-message" name="message" placeholder="Ad esempio: ridurre l'MTTR, gestire i client dopo NAT o giustificare lo SLA."></textarea>
               </div>
             </div>
             <div class="lead-form-hp" aria-hidden="true">
-              <label for="lead-website">No rellenes este campo</label>
+              <label for="lead-website">Non compilare questo campo</label>
               <input id="lead-website" name="website" type="text" tabindex="-1" autocomplete="off" />
             </div>
-            <label class="lead-form-consent"><input name="privacy_consent" type="checkbox" value="yes" required /> <span>He leído y acepto la <a href="/privacidad/">Política de Privacidad</a>. *</span></label>
-            <button class="lead-form-submit" type="submit">Solicitar una demo operativa <span>↗</span></button>
+            <label class="lead-form-consent"><input name="privacy_consent" type="checkbox" value="yes" required /> <span>Ho letto e accetto l <a href="/it/privacy/">politica sulla riservatezza</a>. *</span></label>
+            <button class="lead-form-submit" type="submit">Richiedi una demo operativa <span>↗</span></button>
             <p class="lead-form-status" id="lead-form-status" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -632,8 +633,8 @@
 
     <footer>
       <div class="wrap footer-in">
-        <span>© 2026 NimBox SRE · Operación y observabilidad gestionada</span>
-        <span><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a> · <a href="/cookies/">Cookies</a> · <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a> · <a href="https://app.nimboxsre.com/">Acceder a la app</a> · <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a></span>
+        <span>© 2026 NimBox SRE · Funzionamento e osservabilità gestita</span>
+        <span><a href="/it/avviso-legale/">Avviso legale</a> · <a href="/it/privacy/">Privacy</a> · <a href="/it/cookies/">Biscotti</a> · <a href="#" data-cc="show-preferencesModal">Preferenze sui cookie</a> · <a href="https://app.nimboxsre.com/">Accedi all'app</a> · <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a></span>
       </div>
     </footer>
 
