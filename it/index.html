@@ -7,16 +7,16 @@
     <meta name="description" content="NimBox SRE: agente proprietario con rilevamento automatico, PAM nativo e profilazione eBPF che gestisce gli host dietro NAT senza aprire SSH. Vivi con il tuo monitoraggio attuale. Incidenti, runbook approvati ed evidenze mensili. Senza montare un NOC 24×7." />
     <meta name="theme-color" content="#faf9f6" />
     <title>NimBox SRE: gestione dell'host dopo NAT e risoluzione dei problemi della macchina</title>
-    <link rel="icon" href="assets/favicon.ico?v=3" sizes="any" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3" />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=3" />
-    <link rel="manifest" href="assets/site.webmanifest" />
+    <link rel="icon" href="/assets/favicon.ico?v=3" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=3" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png?v=3" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=3" />
+    <link rel="manifest" href="/assets/site.webmanifest" />
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NimBox SRE — Operación SRE gestionada para MSPs" />
     <meta property="og:description" content="Agente propio con autodescubrimiento, PAM nativo y profiling eBPF que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
-    <meta property="og:image" content="assets/agent-performance.png?v=2" />
+    <meta property="og:image" content="/assets/agent-performance.png?v=2" />
     <meta name="twitter:card" content="summary_large_image" />
     <style>
       /* Fuentes self-hosted (antes Google Fonts CDN) */
@@ -25,7 +25,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/aFTU7PB1QTsUX8KYthSQBLyM.woff2) format('woff2');
+  src: url(/assets/fonts/aFTU7PB1QTsUX8KYthSQBLyM.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -33,7 +33,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/aFTU7PB1QTsUX8KYthqQBA.woff2) format('woff2');
+  src: url(/assets/fonts/aFTU7PB1QTsUX8KYthqQBA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -41,7 +41,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2) format('woff2');
+  src: url(/assets/fonts/aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -49,7 +49,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2) format('woff2');
+  src: url(/assets/fonts/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -57,7 +57,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -65,7 +65,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -73,7 +73,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -81,7 +81,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -89,7 +89,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -97,7 +97,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
@@ -105,7 +105,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZ2IHSeH.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
@@ -113,7 +113,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
+  src: url(/assets/fonts/rP2Hp2ywxg089UriCZOIHQ.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -340,7 +340,7 @@
   <body>
     <header class="top">
       <nav class="wrap">
-        <a class="brand" href="#inicio" aria-label="NimBox SRE, avvia"><img class="brand-logo" src="assets/nimbox-sre-logo.png?v=2" alt="NimBox SRE" /></a>
+        <a class="brand" href="#inicio" aria-label="NimBox SRE, avvia"><img class="brand-logo" src="/assets/nimbox-sre-logo.png?v=2" alt="NimBox SRE" /></a>
         <button class="hamburger" aria-label="Apri il menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
         <div class="links" id="nav-links">
           <a href="#para-quien">per chi</a>
@@ -369,7 +369,7 @@
         </div>
         <div class="hero-art" aria-label="Prestazioni dell'agente e dashboard SLA in NimBox SRE">
           <div class="shape"></div>
-          <figure class="product-shot"><img src="assets/agent-performance.png?v=2" alt="Dashboard su prestazioni, KPI e SLA dell'agente NimBox SRE" loading="eager" /></figure>
+          <figure class="product-shot"><img src="/assets/agent-performance.png?v=2" alt="Dashboard su prestazioni, KPI e SLA dell'agente NimBox SRE" loading="eager" /></figure>
         </div>
       </section>
 
@@ -448,7 +448,7 @@
 
       <!-- PROOF 1: runbooks -->
       <section class="wrap section-pad proof reveal">
-        <figure class="proof-shot"><img src="assets/runbooks.png?v=2" alt="Runbook approvati e con versione per la correzione assistita da agenti in NimBox SRE" loading="lazy" /></figure>
+        <figure class="proof-shot"><img src="/assets/runbooks.png?v=2" alt="Runbook approvati e con versione per la correzione assistita da agenti in NimBox SRE" loading="lazy" /></figure>
         <div class="proof-copy">
           <div class="eyebrow">Meno dipendenza dall'anziano</div>
           <h2>La conoscenza smette di vivere in due teste.</h2>
@@ -490,7 +490,7 @@
       <!-- PROOF 2: host detail -->
       <section class="outcomes">
         <div class="wrap section-pad proof rev alt reveal">
-          <figure class="proof-shot"><img src="assets/modern-collector-host.png?v=2" alt="Visualizzazione dettagliata di un host in NimBox SRE con parametri di sistema, cronologia degli incidenti e processi monitorati" loading="lazy" /></figure>
+          <figure class="proof-shot"><img src="/assets/modern-collector-host.png?v=2" alt="Visualizzazione dettagliata di un host in NimBox SRE con parametri di sistema, cronologia degli incidenti e processi monitorati" loading="lazy" /></figure>
           <div class="proof-copy">
             <div class="eyebrow">Dal sintomo alla causa principale</div>
             <h2>Non corregge l'avviso: trova la fonte.</h2>
@@ -685,9 +685,9 @@
     </script>
 
     <!-- Banner de cookies (vanilla-cookieconsent, MIT, self-hosted) -->
-    <link rel="stylesheet" href="assets/vendor/cookieconsent/cookieconsent.css" />
-    <link rel="stylesheet" href="assets/cookies-theme.css" />
-    <script defer src="assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
-    <script defer src="assets/cookies.js"></script>
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css" />
+    <link rel="stylesheet" href="/assets/cookies-theme.css" />
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/cookies.js"></script>
   </body>
 </html>
