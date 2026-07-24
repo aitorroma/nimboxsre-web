@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="NimBox SRE: agente propio con autodescubrimiento y PAM nativo que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
+    <meta name="description" content="NimBox SRE: agente propio con autodescubrimiento, PAM nativo y profiling eBPF que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
     <meta name="theme-color" content="#faf9f6" />
     <title>NimBox SRE — Opera hosts tras NAT y resuelve más incidencias con el mismo equipo</title>
     <link rel="icon" href="assets/favicon.ico?v=3" sizes="any" />
@@ -14,7 +14,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NimBox SRE — Operación SRE gestionada para MSPs" />
-    <meta property="og:description" content="Agente propio con autodescubrimiento y PAM nativo que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
+    <meta property="og:description" content="Agente propio con autodescubrimiento, PAM nativo y profiling eBPF que opera hosts tras NAT sin abrir SSH. Convive con tu monitorización actual. Incidencias, runbooks aprobados y evidencia mensual. Sin montar un NOC 24×7." />
     <meta property="og:image" content="assets/agent-performance.png?v=2" />
     <meta name="twitter:card" content="summary_large_image" />
     <style>
@@ -154,8 +154,6 @@
       .stack-in { display:flex; flex-wrap:wrap; align-items:center; gap:14px 34px; padding:20px 0; }
       .stack-in .lbl { font:500 .72rem "DM Mono",monospace; color:var(--muted); letter-spacing:.08em; }
       .stack-in b { font-weight:600; font-size:.92rem; opacity:.72; }
-      .stack-in .soon-lbl { font:500 .68rem "DM Mono",monospace; color:var(--accent); letter-spacing:.06em; }
-      .stack-in b.soon { font-weight:500; opacity:.45; }
 
       /* ---------- section scaffolding ---------- */
       section h2 { font-size:clamp(2.1rem,4.4vw,4rem); font-weight:500; letter-spacing:-.06em; line-height:1.02; margin:14px 0 24px; }
@@ -333,7 +331,7 @@
         <div class="hero-copy">
           <div class="eyebrow">Operación SRE gestionada · para MSPs y software houses</div>
           <h1>Resuelve más incidencias con <em>el mismo equipo</em>.</h1>
-          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente con autodescubrimiento y PAM nativo que opera hosts <b>tras NAT, sin abrir SSH</b>. Incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
+          <p class="lead">NimBox SRE es la capa de operación que convierte tus alertas en servicio facturable: un agente con autodescubrimiento, PAM nativo y <b>profiling eBPF</b> que opera hosts <b>tras NAT, sin abrir SSH</b>. Incidencias, runbooks aprobados y evidencia mensual lista para tu SLA. <b>Sin montar un NOC 24×7.</b></p>
           <div class="hero-actions">
             <a class="cta" href="mailto:aitor@nimbox360.com?subject=Quiero%20ver%20NimBox%20SRE">Pedir una demo <span>↗</span></a>
             <a class="cta cta-ghost" href="#como-funciona">Ver cómo funciona</a>
@@ -350,8 +348,7 @@
       <div class="stack">
         <div class="wrap stack-in">
           <span class="lbl">SE INTEGRA CON LO QUE YA USAS</span>
-          <b>Autodescubrimiento</b><b>PAM integrado</b><b>Ejecución tras NAT</b><b>Monit</b><b>OpenTelemetry</b><b>Prometheus</b><b>Webhooks</b>
-          <span class="soon-lbl">PRÓXIMAMENTE</span><b class="soon">eBPF profiling</b>
+          <b>Autodescubrimiento</b><b>PAM integrado</b><b>Ejecución tras NAT</b><b>Profiling eBPF</b><b>Monit</b><b>OpenTelemetry</b><b>Prometheus</b><b>Webhooks</b>
         </div>
       </div>
 
@@ -412,7 +409,7 @@
           <div class="offerings">
             <article class="offering"><em>01 / MONITORIZACIÓN</em><h3>Contexto por host</h3><p>Estado, métricas, procesos e historial de incidencias reunidos donde hacen falta.</p></article>
             <article class="offering"><em>02 / INCIDENCIAS</em><h3>Respuesta coordinada</h3><p>Propiedad, severidad, evidencia y SLA para cerrar el ciclo operativo completo.</p></article>
-            <article class="offering"><em>03 / AGENTE</em><h3>Autodescubrimiento inteligente</h3><p>Binario único de un fichero, sin dependencias. Se autoconfigura al instalarse: detecta servicios, procesos y contenedores, y opera aunque el host esté tras NAT.</p></article>
+            <article class="offering"><em>03 / AGENTE</em><h3>Autodescubrimiento y eBPF</h3><p>Binario único de un fichero, sin dependencias. Detecta servicios, procesos y contenedores solo, opera tras NAT y activa profiling eBPF —latencia de I/O, pilas de kernel— cuando la métrica no basta.</p></article>
             <article class="offering"><em>04 / ACCESO PRIVILEGIADO</em><h3>PAM nativo, sin fricción</h3><p>El agente se auto-registra en PAM al instalarse. Cada conexión SSH queda auditada. Sin contraseñas en tráfico, sin configuración manual.</p></article>
             <article class="offering"><em>05 / INFORMES</em><h3>Servicio que se puede explicar</h3><p>Convierte actividad, resoluciones y cumplimiento de SLA en un informe mensual útil.</p></article>
             <article class="offering"><em>06 / INTEGRACIONES</em><h3>Encaja, no reemplaza</h3><p>Conecta alertas, error tracking y tus herramientas actuales en un solo flujo operativo.</p></article>
@@ -474,7 +471,7 @@
               <li>Resuelve la causa raíz, no solo el síntoma</li>
               <li>Menos recurrencia = clientes más contentos</li>
             </ul>
-            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Autodescubrimiento sin configurar.</b> El agente detecta lo que corre en cada host —servicios, procesos, contenedores— y reúne métricas, carga e historial en una vista por host, sin tocar nada. <b style="color:var(--accent)">Próximamente:</b> profiling profundo con eBPF (traces de kernel, bloqueos de I/O, presión de memoria) para los casos en que la métrica no alcanza.</p>
+            <p style="margin-top:22px;font-size:.9rem"><b style="color:var(--ink)">Autodescubrimiento + eBPF.</b> El agente detecta lo que corre en cada host sin configurar nada. Y cuando la métrica no alcanza, activa <b style="color:var(--ink)">profiling eBPF</b> sobre la marcha: histograma de latencia de I/O y pilas de kernel de los procesos bloqueados, con el tiempo exacto que pasan atascados. Se enciende solo donde el kernel lo soporta, sin agente pesado ni instrumentar nada.</p>
           </div>
         </div>
       </section>
