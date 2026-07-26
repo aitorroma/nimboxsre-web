@@ -12,10 +12,10 @@
   --cc-link-color: #f2f1ee;
   --cc-overlay-bg: rgba(17, 18, 21, .6);
 
-  --cc-btn-primary-bg: #e8462b;
-  --cc-btn-primary-border-color: #e8462b;
-  --cc-btn-primary-hover-bg: #ce371f;
-  --cc-btn-primary-hover-border-color: #ce371f;
+  --cc-btn-primary-bg: #bd331f;
+  --cc-btn-primary-border-color: #bd331f;
+  --cc-btn-primary-hover-bg: #9f2a1b;
+  --cc-btn-primary-hover-border-color: #9f2a1b;
   --cc-btn-primary-color: #fff;
   --cc-btn-primary-hover-color: #fff;
 
@@ -27,9 +27,13 @@
   --cc-btn-secondary-color: #f2f1ee;
   --cc-btn-secondary-hover-color: #fff;
 
-  --cc-toggle-on-bg: #e8462b;
+  --cc-toggle-on-bg: #bd331f;
   --cc-cookie-category-block-bg: #17181b;
   --cc-cookie-category-block-border: #2a2b2e;
 }
 #cc-main .cm__btn,
 #cc-main .pm__btn { border-radius: 0; font-weight: 600; }
+
+/* Lighthouse touch-target minimum for consent actions. */
+#cc-main .cm__btn,
+#cc-main .pm__btn { min-height: 48px; }
