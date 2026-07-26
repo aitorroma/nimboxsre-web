@@ -37,3 +37,25 @@
 /* Lighthouse touch-target minimum for consent actions. */
 #cc-main .cm__btn,
 #cc-main .pm__btn { min-height: 48px; }
+
+/* Consent actions have equal prominence and guaranteed WCAG AA contrast. */
+#cc-main .cm__btn,
+#cc-main .cm__btn--secondary,
+#cc-main .pm__btn,
+#cc-main .pm__btn--secondary {
+  background: #34363a !important;
+  border-color: #34363a !important;
+  color: #fff !important;
+}
+#cc-main .cm__btn span,
+#cc-main .pm__btn span {
+  color: inherit !important;
+}
+#cc-main .cm__btn:hover,
+#cc-main .cm__btn--secondary:hover,
+#cc-main .pm__btn:hover,
+#cc-main .pm__btn--secondary:hover {
+  background: #25272a !important;
+  border-color: #25272a !important;
+  color: #fff !important;
+}
