@@ -1,39 +1,27 @@
 # NimBox SRE
 
-> NimBox SRE is a managed site reliability engineering and observability service for operating infrastructure, including hosts behind NAT, with the same technical team.
+> NimBox SRE is a managed site reliability engineering and observability service that helps technical teams operate infrastructure, including hosts behind NAT, resolve incidents, and provide SLA evidence without building a 24/7 NOC.
 
-## Overview
+NimBox SRE complements existing monitoring with a self-discovering agent, native PAM, eBPF profiling, approved runbooks, coordinated incident management, and monthly operational reports. The service is for MSPs and technical operations teams that need more operational capacity without expanding their team.
 
-NimBox SRE combines host monitoring, incident management, a self-discovering agent, privileged access management (PAM), eBPF profiling, operational integrations, and monthly service reports. It is designed to complement existing monitoring rather than replace it.
+## Main resources
 
-## Key capabilities
-
-- Unified host context: status, metrics, processes, and incident history.
-- Coordinated incident response with ownership, severity, evidence, and SLAs.
-- Single-file agent with automatic discovery of services, processes, and containers; works behind NAT without exposing SSH.
-- On-demand eBPF profiling for I/O latency and kernel-stack investigation.
-- Native PAM registration and audited SSH access without sending passwords in transit.
-- Monthly operational evidence and SLA reporting.
-- Integration with existing alerts, error tracking, and operational tooling.
-
-## Who it is for
-
-Teams that already monitor their infrastructure but need to resolve more incidents, operate hard-to-reach hosts, preserve operational knowledge, and demonstrate delivered service without building a 24/7 NOC.
-
-## Contact
-
-- Website: https://nimboxsre.com/
-- Demo and enquiries: mailto:aitor@nimbox360.com
-- Application: https://app.nimboxsre.com/
+- [NimBox SRE overview](https://nimboxsre.com/): Spanish landing page with the service overview, capabilities, FAQ, and demo request form.
+- [Full NimBox SRE information](https://nimboxsre.com/llms-full.txt): Expanded machine-readable description of the service, workflow, audience, and public resources.
+- [NimBox SRE application](https://app.nimboxsre.com/): Access to the NimBox SRE application.
 
 ## Languages
 
-- Spanish: https://nimboxsre.com/
-- English: https://nimboxsre.com/en/
-- Italian: https://nimboxsre.com/it/
+- [Spanish website](https://nimboxsre.com/): Primary Spanish version of the public website.
+- [English website](https://nimboxsre.com/en/): English version of the public website.
+- [Italian website](https://nimboxsre.com/it/): Italian version of the public website.
 
-## Additional resources
+## Policies
 
-- Legal notice: https://nimboxsre.com/aviso-legal/
-- Privacy policy: https://nimboxsre.com/privacidad/
-- Cookie policy: https://nimboxsre.com/cookies/
+- [Legal notice](https://nimboxsre.com/aviso-legal/): Spanish legal notice.
+- [Privacy policy](https://nimboxsre.com/privacidad/): Spanish privacy policy.
+- [Cookie policy](https://nimboxsre.com/cookies/): Spanish cookie policy.
+
+## Optional
+
+- [XML sitemap](https://nimboxsre.com/sitemap.xml): Complete list of public pages.
