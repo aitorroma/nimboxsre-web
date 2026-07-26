@@ -1,0 +1,78 @@
+# NimBox SRE — Full site information
+
+## Identity and purpose
+
+NimBox SRE is a managed operations and observability service. Its purpose is to help an existing technical team resolve more infrastructure incidents without increasing headcount or assembling a 24/7 network operations center. The service focuses on converting alerts into coordinated work, evidence, approved runbooks, and continuous operational improvement.
+
+Primary website: https://nimboxsre.com/
+Application: https://app.nimboxsre.com/
+Contact: aitor@nimbox360.com
+
+## Product and service capabilities
+
+### Monitoring and host context
+NimBox SRE brings together host state, metrics, running processes, and incident history in the place where operators need it. It connects hosts and alerts, then uses that context to support diagnosis and follow-up.
+
+### Incident management
+The service structures incidents with ownership, severity, evidence, and SLA information, helping close the full operational loop rather than merely acknowledge an alert.
+
+### Agent and discovery
+The NimBox SRE agent is a single-file binary with no dependencies. It automatically discovers services, processes, and containers. It can operate hosts behind NAT without opening SSH access.
+
+### eBPF profiling
+When standard metrics do not explain an issue, the agent can activate eBPF profiling to investigate signals such as I/O latency and kernel stacks. The objective is to find the underlying cause instead of applying a superficial alert-level fix.
+
+### Privileged access management
+The agent registers itself with PAM during installation. SSH connections are audited, passwords are not sent in transit, and manual configuration is avoided where possible.
+
+### Evidence and reporting
+NimBox SRE turns operations activity, resolutions, and SLA compliance into a useful monthly report. This supplies evidence that can be used to explain and support the delivered service.
+
+### Integrations
+NimBox SRE is intended to fit alongside existing monitoring, alerting, error-tracking, and operational tools in a unified workflow; it is not positioned as a forced replacement for those systems.
+
+## Typical operational workflow
+
+1. Connect hosts and alerts.
+2. Install the agent, which performs automatic discovery.
+3. Collect operational evidence that is ready for monthly reporting and service review.
+
+## Intended users
+
+NimBox SRE is relevant to technical and service teams that:
+
+- Already have monitoring but lack a complete operational view of the service.
+- Need to manage customer or internal hosts that are behind NAT or otherwise difficult to reach.
+- Want less operational knowledge concentrated in a few people.
+- Need approved runbooks, incident evidence, and clearer SLA reporting.
+- Want to increase service delivered per technician without enlarging the team.
+
+It may not be the right fit for organisations seeking only a basic monitoring dashboard without operational process, privileged access controls, or service evidence.
+
+## Engagement
+
+NimBox SRE starts with a short demo tailored to the prospective customer's case and a scoped pilot. For a demo or suitability discussion, contact aitor@nimbox360.com.
+
+## Public pages
+
+### Spanish
+- Home: https://nimboxsre.com/
+- Legal notice: https://nimboxsre.com/aviso-legal/
+- Privacy policy: https://nimboxsre.com/privacidad/
+- Cookie policy: https://nimboxsre.com/cookies/
+
+### English
+- Home: https://nimboxsre.com/en/
+- Legal notice: https://nimboxsre.com/en/legal-notice/
+- Privacy policy: https://nimboxsre.com/en/privacy/
+- Cookie policy: https://nimboxsre.com/en/cookies/
+
+### Italian
+- Home: https://nimboxsre.com/it/
+- Legal notice: https://nimboxsre.com/it/legal-notice/
+- Privacy policy: https://nimboxsre.com/it/privacy/
+- Cookie policy: https://nimboxsre.com/it/cookies/
+
+## Website policy
+
+The public website states that it does not use cookies or third-party tracking technologies. Consult the privacy and cookie policy pages for the authoritative legal information.
