@@ -75,4 +75,4 @@ NimBox SRE starts with a short demo tailored to the prospective customer's case 
 
 ## Website policy
 
-The public website states that it does not use cookies or third-party tracking technologies. Consult the privacy and cookie policy pages for the authoritative legal information.
+The public website uses necessary consent cookies and optional PostHog Cloud EU analytics. Analytics load only after visitor consent; session recording and automatic form capture are disabled. Consult the privacy and cookie policy pages for the authoritative legal information.
