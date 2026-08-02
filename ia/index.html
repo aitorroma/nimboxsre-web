@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>Política de Inteligencia Artificial — NimBox SRE</title>
+    <meta name="description" content="Cómo usa NimBox SRE la inteligencia artificial: qué hace el agente, qué información procesa, qué decide una persona y qué garantías se aplican conforme al Reglamento (UE) 2024/1689." />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/legal.css" />
+  </head>
+  <body>
+    <header class="legal-top">
+      <div class="wrap">
+        <a href="/" aria-label="NimBox SRE, inicio"><img src="/assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a>
+        <a class="back" href="/">← Volver</a>
+      </div>
+    </header>
+
+    <main class="legal">
+      <div class="wrap">
+        <p class="eyebrow">Transparencia</p>
+        <h1>Política de Inteligencia Artificial</h1>
+        <p class="updated">Última actualización: 2 de agosto de 2026</p>
+
+        <p>NimBox SRE incorpora un agente basado en inteligencia artificial. Esta página explica qué hace ese agente, qué información maneja, dónde se procesa y —sobre todo— dónde termina su criterio y empieza el de una persona.</p>
+
+        <div class="box">
+          <p><strong>En una línea:</strong> el agente diagnostica y propone; ejecutar cambios sobre una máquina requiere un procedimiento aprobado por una persona o una confirmación explícita en ese momento.</p>
+        </div>
+
+        <h2>1. Marco normativo</h2>
+        <p>Esta política atiende las obligaciones de transparencia del <strong>Reglamento (UE) 2024/1689</strong> (Reglamento Europeo de Inteligencia Artificial), aplicables desde el 2 de agosto de 2026, y se complementa con el Reglamento (UE) 2016/679 (RGPD) cuando el tratamiento afecta a datos personales.</p>
+
+        <h2>2. Estás interactuando con un sistema de IA</h2>
+        <p>Cuando el agente responde en una incidencia, en una conversación de Telegram o en cualquier otro canal del servicio, quien contesta es un <strong>sistema de inteligencia artificial</strong>, no una persona. Firma siempre con un nombre identificable como agente y sus respuestas quedan registradas como tales en el historial de cada incidencia.</p>
+        <p>Los informes de causa raíz, los borradores de procedimiento y los resúmenes que genera son <strong>contenido generado por IA</strong> a partir de la evidencia recogida del sistema afectado.</p>
+
+        <h2>3. Para qué se usa</h2>
+        <ul>
+          <li>Analizar alertas e incidencias de los sistemas monitorizados.</li>
+          <li>Reunir evidencia de diagnóstico ejecutando comprobaciones de solo lectura.</li>
+          <li>Redactar informes de causa raíz a partir de esa evidencia.</li>
+          <li>Proponer borradores de procedimientos de resolución, que nacen sin aprobar.</li>
+          <li>Consultar documentación técnica indexada antes de proponer un comando.</li>
+          <li>Responder cuando alguien del equipo le menciona en una incidencia.</li>
+          <li>Clasificar y resumir información operativa.</li>
+        </ul>
+
+        <h2>4. Qué decide una persona</h2>
+        <p>El agente actúa con distintos niveles de autonomía según la operación:</p>
+        <ul>
+          <li><strong>Sin autorización previa:</strong> leer métricas, consultar el estado de un servicio, revisar registros y ejecutar comprobaciones que no modifican la máquina.</li>
+          <li><strong>Con procedimiento aprobado o confirmación explícita:</strong> cualquier cambio sobre un sistema —reinicios de servicio, cambios de configuración, paquetes, red, cortafuegos, usuarios o borrados—.</li>
+        </ul>
+        <p>Los procedimientos que el propio agente propone se crean como borrador y <strong>no son ejecutables hasta que una persona los aprueba</strong>. Cerrar una incidencia exige comprobar que la condición que la abrió ya no se cumple.</p>
+
+        <h2>5. Controles técnicos</h2>
+        <ul>
+          <li>Acceso a los sistemas mediante credenciales temporales que caducan y se revocan al terminar.</li>
+          <li>Sesiones grabadas: cada comando ejecutado queda registrado y es reproducible después.</li>
+          <li>Registro de auditoría de las acciones relevantes, con autor, fecha y resultado.</li>
+          <li>Aislamiento por cliente: los datos, la documentación y las credenciales de una empresa no son accesibles desde el agente de otra.</li>
+          <li>Límites de ejecución y mecanismos de reversión en los procedimientos aprobados.</li>
+        </ul>
+
+        <h2>6. Qué información se envía al modelo</h2>
+        <p>Para diagnosticar una incidencia puede enviarse al modelo la información necesaria para entenderla: mensajes de error, fragmentos de registro, métricas, estado de servicios, datos de configuración e información sobre la máquina afectada. Se aplica el principio de minimización: se envía lo necesario para la operación concreta, no el sistema entero.</p>
+        <p>Esa información puede contener datos personales cuando aparezcan en los registros del sistema del cliente. En ese caso el tratamiento se rige por el contrato de prestación de servicios y el acuerdo de encargo de tratamiento correspondiente, no por esta página.</p>
+
+        <h2>7. Dónde se procesa</h2>
+        <p>Los modelos que utiliza el servicio se ejecutan a través de una pasarela propia que enruta hacia proveedores seleccionados con estos criterios:</p>
+        <ul>
+          <li>Procesamiento dentro del <strong>Espacio Económico Europeo</strong>.</li>
+          <li>Modelos de pesos abiertos siempre que cubran la necesidad técnica.</li>
+          <li>Configuraciones que no conservan las consultas ni las utilizan para entrenar modelos.</li>
+        </ul>
+        <p>El modelo concreto puede cambiar con el tiempo por motivos de rendimiento, disponibilidad o coste, manteniendo estos criterios.</p>
+
+        <h2>8. Registro y trazabilidad</h2>
+        <p>Se conserva el rastro técnico necesario para auditar qué ocurrió: fecha, servicio, operación, resultado y quién o qué la originó. Los informes generados por el agente se guardan asociados a su incidencia, junto con la evidencia sobre la que se redactaron, para que puedan revisarse después.</p>
+
+        <h2>9. Límites del sistema</h2>
+        <p>Los modelos de lenguaje son estadísticos y pueden equivocarse. Un informe generado por IA puede contener una interpretación incorrecta, omitir un dato relevante o proponer una acción inadecuada para ese sistema concreto.</p>
+        <p>Por eso el diseño del servicio parte de que <strong>la propuesta del agente no sustituye el criterio de quien opera</strong>: lo que ejecuta cambios es un procedimiento aprobado o una persona que confirma. Un informe de causa raíz es un punto de partida para el análisis, no una conclusión definitiva.</p>
+
+        <h2>10. Lo que no hacemos</h2>
+        <ul>
+          <li>No se utilizan sistemas de reconocimiento de emociones ni de categorización biométrica.</li>
+          <li>No se generan imágenes, audio ni vídeo sintéticos que puedan parecer auténticos.</li>
+          <li>No se adoptan decisiones automatizadas con efectos jurídicos sobre personas.</li>
+          <li>No se utiliza la información de los clientes para entrenar modelos.</li>
+        </ul>
+
+        <h2>11. Cambios en esta política</h2>
+        <p>Tanto la tecnología como su regulación evolucionan. Esta página se actualizará cuando cambien los proveedores, los modelos, las funcionalidades o las obligaciones aplicables. La versión publicada aquí es la vigente.</p>
+
+        <h2>12. Contacto</h2>
+        <p>Para cualquier consulta sobre el uso de inteligencia artificial en el servicio, incluida información adicional sobre cómo funciona una funcionalidad concreta, escribe a <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a>.</p>
+
+        <p class="updated">Esta política se interpreta junto con la <a href="/privacidad/">Política de Privacidad</a>, la <a href="/cookies/">Política de Cookies</a> y el <a href="/aviso-legal/">Aviso legal</a>.</p>
+      </div>
+    </main>
+
+    <footer class="legal-foot">
+      <div class="wrap">
+        <span>© 2026 NimBox SRE · Aitor Roma Vázquez</span>
+        <nav>
+          <a href="/aviso-legal/">Aviso legal</a>
+          <a href="/privacidad/">Privacidad</a>
+          <a href="/cookies/">Cookies</a>
+          <a href="/ia/">Inteligencia Artificial</a>
+          <a href="#" data-cc="show-preferencesModal">Preferencias de cookies</a>
+          <a href="mailto:aitor@nimbox360.com">Contacto</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Banner de cookies (vanilla-cookieconsent, MIT, self-hosted) -->
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css" />
+    <link rel="stylesheet" href="/assets/cookies-theme.css" />
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/cookies.js"></script>
+  </body>
+</html>

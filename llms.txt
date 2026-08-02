@@ -21,6 +21,7 @@ NimBox SRE complements existing monitoring with a self-discovering agent, native
 - [Legal notice](https://nimboxsre.com/aviso-legal/): Spanish legal notice.
 - [Privacy policy](https://nimboxsre.com/privacidad/): Spanish privacy policy.
 - [Cookie policy](https://nimboxsre.com/cookies/): Spanish cookie policy.
+- [AI policy](https://nimboxsre.com/ia/): How NimBox SRE uses artificial intelligence, what the agent decides and what requires human approval (EU AI Act transparency).
 
 ## Optional
 
