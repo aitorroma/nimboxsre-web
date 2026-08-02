@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <base href="/it/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>Informativa sull'intelligenza artificiale — NimBox SRE</title>
+    <meta name="description" content="Come NimBox SRE utilizza l'intelligenza artificiale: cosa fa l'agente, quali informazioni tratta, cosa decide una persona e quali garanzie si applicano ai sensi del Regolamento (UE) 2024/1689." />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/legal.css" />
+  </head>
+  <body>
+    <header class="legal-top">
+      <div class="wrap">
+        <a href="/it/" aria-label="NimBox SRE, avvia"><img src="/assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a>
+        <a class="back" href="/it/">← Indietro</a>
+      </div>
+    </header>
+
+    <main class="legal">
+      <div class="wrap">
+        <p class="eyebrow">Trasparenza</p>
+        <h1>Informativa sull'intelligenza artificiale</h1>
+        <p class="updated">Ultimo aggiornamento: 2 agosto 2026</p>
+
+        <p>NimBox SRE integra un agente basato sull'intelligenza artificiale. Questa pagina spiega cosa fa quell'agente, quali informazioni tratta, dove vengono elaborate e — soprattutto — dove finisce il suo giudizio e comincia quello di una persona.</p>
+
+        <div class="box">
+          <p><strong>In una riga:</strong> l'agente diagnostica e propone; per modificare una macchina serve una procedura approvata da una persona o una conferma esplicita in quel momento.</p>
+        </div>
+
+        <h2>1. Quadro normativo</h2>
+        <p>Questa informativa risponde agli obblighi di trasparenza del <strong>Regolamento (UE) 2024/1689</strong> (Regolamento europeo sull'intelligenza artificiale), applicabili dal 2 agosto 2026, e si integra con il Regolamento (UE) 2016/679 (GDPR) quando il trattamento riguarda dati personali.</p>
+
+        <h2>2. Stai interagendo con un sistema di IA</h2>
+        <p>Quando l'agente risponde in un incidente, in una conversazione Telegram o attraverso qualsiasi altro canale del servizio, a rispondere è un <strong>sistema di intelligenza artificiale</strong>, non una persona. Firma sempre con un nome riconoscibile come agente e le sue risposte restano registrate come tali nello storico di ogni incidente.</p>
+        <p>I rapporti di analisi delle cause, le bozze di procedura e i riepiloghi che produce sono <strong>contenuti generati dall'IA</strong> a partire dalle evidenze raccolte dal sistema interessato.</p>
+
+        <h2>3. A cosa serve</h2>
+        <ul>
+          <li>Analizzare avvisi e incidenti dei sistemi monitorati.</li>
+          <li>Raccogliere evidenze diagnostiche eseguendo controlli di sola lettura.</li>
+          <li>Redigere rapporti sulle cause a partire da quelle evidenze.</li>
+          <li>Proporre bozze di procedure di risoluzione, che nascono non approvate.</li>
+          <li>Consultare documentazione tecnica indicizzata prima di proporre un comando.</li>
+          <li>Rispondere quando qualcuno del team lo menziona in un incidente.</li>
+          <li>Classificare e riassumere informazioni operative.</li>
+        </ul>
+
+        <h2>4. Cosa decide una persona</h2>
+        <p>L'agente opera con livelli di autonomia diversi a seconda dell'operazione:</p>
+        <ul>
+          <li><strong>Senza autorizzazione preventiva:</strong> leggere metriche, verificare lo stato di un servizio, esaminare i registri ed eseguire controlli che non modificano la macchina.</li>
+          <li><strong>Con procedura approvata o conferma esplicita:</strong> qualsiasi modifica a un sistema — riavvii di servizi, modifiche di configurazione, pacchetti, rete, firewall, utenti o cancellazioni.</li>
+        </ul>
+        <p>Le procedure che l'agente stesso propone vengono create come bozze e <strong>non sono eseguibili finché una persona non le approva</strong>. Chiudere un incidente richiede di verificare che la condizione che lo ha aperto non sia più presente.</p>
+
+        <h2>5. Controlli tecnici</h2>
+        <ul>
+          <li>Accesso ai sistemi tramite credenziali temporanee che scadono e vengono revocate al termine.</li>
+          <li>Sessioni registrate: ogni comando eseguito resta tracciato ed è riproducibile in seguito.</li>
+          <li>Registro di audit delle azioni rilevanti, con autore, data e risultato.</li>
+          <li>Isolamento per cliente: i dati, la documentazione e le credenziali di un'azienda non sono raggiungibili dall'agente di un'altra.</li>
+          <li>Limiti di esecuzione e meccanismi di ripristino nelle procedure approvate.</li>
+        </ul>
+
+        <h2>6. Quali informazioni vengono inviate al modello</h2>
+        <p>Per diagnosticare un incidente può essere inviata al modello l'informazione necessaria a comprenderlo: messaggi di errore, frammenti di registro, metriche, stato dei servizi, dati di configurazione e informazioni sulla macchina interessata. Si applica il principio di minimizzazione: si invia quanto serve all'operazione specifica, non l'intero sistema.</p>
+        <p>Tali informazioni possono contenere dati personali quando compaiono nei registri del sistema del cliente. In tal caso il trattamento è regolato dal contratto di servizio e dal relativo accordo sul trattamento dei dati, non da questa pagina.</p>
+
+        <h2>7. Dove vengono elaborate</h2>
+        <p>I modelli utilizzati dal servizio sono raggiunti tramite un gateway proprio, che instrada verso fornitori selezionati con questi criteri:</p>
+        <ul>
+          <li>Elaborazione all'interno dello <strong>Spazio economico europeo</strong>.</li>
+          <li>Modelli a pesi aperti ogni volta che soddisfano l'esigenza tecnica.</li>
+          <li>Configurazioni che non conservano le richieste né le usano per addestrare modelli.</li>
+        </ul>
+        <p>Il modello specifico può cambiare nel tempo per motivi di prestazioni, disponibilità o costo, mantenendo questi criteri.</p>
+
+        <h2>8. Registrazione e tracciabilità</h2>
+        <p>Viene conservata la traccia tecnica necessaria a verificare cosa è successo: data, servizio, operazione, risultato e chi o cosa l'ha originata. I rapporti generati dall'agente sono conservati insieme al relativo incidente e alle evidenze su cui sono stati redatti, così da poter essere riesaminati.</p>
+
+        <h2>9. Limiti del sistema</h2>
+        <p>I modelli linguistici sono statistici e possono sbagliare. Un rapporto generato dall'IA può contenere un'interpretazione errata, omettere un dato rilevante o proporre un'azione inadatta a quel sistema specifico.</p>
+        <p>Per questo il servizio è progettato partendo dal presupposto che <strong>la proposta dell'agente non sostituisce il giudizio di chi opera</strong>: a eseguire le modifiche è una procedura approvata o una persona che conferma. Un rapporto sulle cause è un punto di partenza per l'analisi, non una conclusione definitiva.</p>
+
+        <h2>10. Cosa non facciamo</h2>
+        <ul>
+          <li>Non si utilizzano sistemi di riconoscimento delle emozioni né di categorizzazione biometrica.</li>
+          <li>Non si generano immagini, audio o video sintetici che possano sembrare autentici.</li>
+          <li>Non si adottano decisioni automatizzate con effetti giuridici sulle persone.</li>
+          <li>Le informazioni dei clienti non vengono usate per addestrare modelli.</li>
+        </ul>
+
+        <h2>11. Modifiche a questa informativa</h2>
+        <p>Sia la tecnologia sia la sua regolamentazione evolvono. Questa pagina verrà aggiornata quando cambieranno fornitori, modelli, funzionalità o obblighi applicabili. La versione qui pubblicata è quella vigente.</p>
+
+        <h2>12. Contatti</h2>
+        <p>Per qualsiasi domanda sull'uso dell'intelligenza artificiale nel servizio, comprese informazioni aggiuntive sul funzionamento di una funzionalità specifica, scrivi a <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a>.</p>
+
+        <p class="updated">Questa informativa va letta insieme all'<a href="/it/privacy/">Informativa sulla privacy</a>, all'<a href="/it/cookies/">Informativa sui cookie</a> e all'<a href="/it/legal-notice/">Avviso legale</a>.</p>
+      </div>
+    </main>
+
+    <footer class="legal-foot">
+      <div class="wrap">
+        <span>© 2026 NimBox SRE · Aitor Roma Vázquez</span>
+        <nav>
+          <a href="/it/legal-notice/">Avviso legale</a>
+          <a href="/it/privacy/">Privacy</a>
+          <a href="/it/cookies/">Cookie</a>
+          <a href="/it/ai/">Intelligenza artificiale</a>
+          <a href="#" data-cc="show-preferencesModal">Preferenze sui cookie</a>
+          <a href="mailto:aitor@nimbox360.com">Contatto</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Banner de cookies (vanilla-cookieconsent, MIT, self-hosted) -->
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css" />
+    <link rel="stylesheet" href="/assets/cookies-theme.css" />
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/cookies.js"></script>
+  </body>
+</html>

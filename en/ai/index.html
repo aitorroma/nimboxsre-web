@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="/en/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>Artificial Intelligence Policy — NimBox SRE</title>
+    <meta name="description" content="How NimBox SRE uses artificial intelligence: what the agent does, what information it processes, what a human decides, and the safeguards applied under Regulation (EU) 2024/1689." />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/legal.css" />
+  </head>
+  <body>
+    <header class="legal-top">
+      <div class="wrap">
+        <a href="/en/" aria-label="NimBox SRE, start"><img src="/assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a>
+        <a class="back" href="/en/">← Back</a>
+      </div>
+    </header>
+
+    <main class="legal">
+      <div class="wrap">
+        <p class="eyebrow">Transparency</p>
+        <h1>Artificial Intelligence Policy</h1>
+        <p class="updated">Last update: 2 August 2026</p>
+
+        <p>NimBox SRE includes an agent built on artificial intelligence. This page explains what that agent does, what information it handles, where it is processed and — above all — where its judgement ends and a person's begins.</p>
+
+        <div class="box">
+          <p><strong>In one line:</strong> the agent diagnoses and proposes; making changes to a machine requires either a human-approved procedure or an explicit confirmation at that moment.</p>
+        </div>
+
+        <h2>1. Regulatory framework</h2>
+        <p>This policy addresses the transparency obligations of <strong>Regulation (EU) 2024/1689</strong> (the EU Artificial Intelligence Act), applicable from 2 August 2026, and complements Regulation (EU) 2016/679 (GDPR) where processing involves personal data.</p>
+
+        <h2>2. You are interacting with an AI system</h2>
+        <p>When the agent replies in an incident, in a Telegram conversation or through any other channel of the service, the reply comes from an <strong>artificial intelligence system</strong>, not from a person. It always signs with a name identifiable as an agent, and its replies are recorded as such in each incident's history.</p>
+        <p>Root cause reports, draft procedures and summaries it produces are <strong>AI-generated content</strong>, written from evidence collected from the affected system.</p>
+
+        <h2>3. What it is used for</h2>
+        <ul>
+          <li>Analysing alerts and incidents from monitored systems.</li>
+          <li>Gathering diagnostic evidence by running read-only checks.</li>
+          <li>Writing root cause reports from that evidence.</li>
+          <li>Proposing draft resolution procedures, which start unapproved.</li>
+          <li>Consulting indexed technical documentation before proposing a command.</li>
+          <li>Replying when a team member mentions it in an incident.</li>
+          <li>Classifying and summarising operational information.</li>
+        </ul>
+
+        <h2>4. What a person decides</h2>
+        <p>The agent operates at different levels of autonomy depending on the operation:</p>
+        <ul>
+          <li><strong>Without prior authorisation:</strong> reading metrics, checking the state of a service, reviewing logs and running checks that do not modify the machine.</li>
+          <li><strong>With an approved procedure or explicit confirmation:</strong> any change to a system — service restarts, configuration changes, packages, network, firewall, users or deletions.</li>
+        </ul>
+        <p>Procedures the agent proposes itself are created as drafts and are <strong>not executable until a person approves them</strong>. Closing an incident requires verifying that the condition which opened it no longer holds.</p>
+
+        <h2>5. Technical controls</h2>
+        <ul>
+          <li>System access through temporary credentials that expire and are revoked when the work ends.</li>
+          <li>Recorded sessions: every command executed is logged and can be replayed afterwards.</li>
+          <li>Audit trail of relevant actions, with author, timestamp and outcome.</li>
+          <li>Isolation per customer: one company's data, documentation and credentials are not reachable from another company's agent.</li>
+          <li>Execution limits and rollback mechanisms in approved procedures.</li>
+        </ul>
+
+        <h2>6. What is sent to the model</h2>
+        <p>To diagnose an incident, the information needed to understand it may be sent to the model: error messages, log fragments, metrics, service state, configuration data and details about the affected machine. Data minimisation applies: what is sent is what the specific operation needs, not the whole system.</p>
+        <p>That information may contain personal data when it appears in the customer's system logs. In that case processing is governed by the service agreement and the corresponding data processing agreement, not by this page.</p>
+
+        <h2>7. Where it is processed</h2>
+        <p>The models used by the service are reached through our own gateway, which routes to providers selected on these criteria:</p>
+        <ul>
+          <li>Processing within the <strong>European Economic Area</strong>.</li>
+          <li>Open-weight models whenever they meet the technical need.</li>
+          <li>Configurations that neither retain queries nor use them to train models.</li>
+        </ul>
+        <p>The specific model may change over time for reasons of performance, availability or cost, while keeping these criteria.</p>
+
+        <h2>8. Logging and traceability</h2>
+        <p>The technical trail needed to audit what happened is retained: date, service, operation, outcome and what originated it. Reports generated by the agent are stored alongside their incident and the evidence they were written from, so they can be reviewed later.</p>
+
+        <h2>9. Limits of the system</h2>
+        <p>Language models are statistical and can be wrong. An AI-generated report may contain an incorrect interpretation, omit a relevant detail or propose an action unsuitable for that particular system.</p>
+        <p>That is why the service is designed on the premise that <strong>the agent's proposal does not replace the judgement of whoever operates the system</strong>: what executes changes is an approved procedure or a person who confirms. A root cause report is a starting point for analysis, not a settled conclusion.</p>
+
+        <h2>10. What we do not do</h2>
+        <ul>
+          <li>No emotion recognition or biometric categorisation systems are used.</li>
+          <li>No synthetic images, audio or video that could pass as authentic are generated.</li>
+          <li>No automated decisions producing legal effects on people are taken.</li>
+          <li>Customer information is not used to train models.</li>
+        </ul>
+
+        <h2>11. Changes to this policy</h2>
+        <p>Both the technology and its regulation are evolving. This page will be updated when providers, models, features or applicable obligations change. The version published here is the one in force.</p>
+
+        <h2>12. Contact</h2>
+        <p>For any question about the use of artificial intelligence in the service, including further detail on how a specific feature works, write to <a href="mailto:aitor@nimbox360.com">aitor@nimbox360.com</a>.</p>
+
+        <p class="updated">This policy should be read together with the <a href="/en/privacy/">Privacy Policy</a>, the <a href="/en/cookies/">Cookie Policy</a> and the <a href="/en/legal-notice/">Legal Notice</a>.</p>
+      </div>
+    </main>
+
+    <footer class="legal-foot">
+      <div class="wrap">
+        <span>© 2026 NimBox SRE · Aitor Roma Vázquez</span>
+        <nav>
+          <a href="/en/legal-notice/">Legal notice</a>
+          <a href="/en/privacy/">Privacy</a>
+          <a href="/en/cookies/">Cookies</a>
+          <a href="/en/ai/">Artificial Intelligence</a>
+          <a href="#" data-cc="show-preferencesModal">Cookie preferences</a>
+          <a href="mailto:aitor@nimbox360.com">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Banner de cookies (vanilla-cookieconsent, MIT, self-hosted) -->
+    <link rel="stylesheet" href="/assets/vendor/cookieconsent/cookieconsent.css" />
+    <link rel="stylesheet" href="/assets/cookies-theme.css" />
+    <script defer src="/assets/vendor/cookieconsent/cookieconsent.umd.js"></script>
+    <script defer src="/assets/cookies.js"></script>
+  </body>
+</html>

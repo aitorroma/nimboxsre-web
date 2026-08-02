@@ -9,8 +9,10 @@
   <url><loc>https://nimboxsre.com/en/legal-notice/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nimboxsre.com/en/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nimboxsre.com/en/cookies/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://nimboxsre.com/en/ai/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nimboxsre.com/it/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nimboxsre.com/it/legal-notice/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nimboxsre.com/it/privacy/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://nimboxsre.com/it/cookies/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://nimboxsre.com/it/ai/</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
