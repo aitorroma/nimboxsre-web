@@ -8,6 +8,7 @@ NimBox SRE complements existing monitoring with a self-discovering agent, native
 
 The agent is a single self-contained binary that discovers what a host runs and watches it without per-host configuration.
 
+- **Telephony**: Asterisk — active channels and calls, calls processed, PJSIP endpoints available and unavailable, contacts, queues and members. Read through the local CLI socket: it neither opens nor needs SIP or AMI.
 - **Applications**: Zimbra, Carbonio, Plesk (including its backups), Hestia, MySQL, Redis, Memcached, PHP-FPM, Varnish, Docker and Docker Swarm including container events, container registries, systemd units, TLS certificates.
 - **Platforms**: AWS EC2 and CloudWatch (via IMDSv2 instance profile, no stored access keys), Proxmox.
 - **Kubernetes**: on a node, the agent lists the pods running on it with their namespace, name and resource consumption, read from cgroups and enriched through CRI. It distinguishes the runtime handler, so a Kata Containers sandbox is reported as such, and it reports the node's Kata version. It works from the node itself and needs no cluster credentials.
