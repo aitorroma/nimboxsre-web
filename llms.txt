@@ -2,7 +2,28 @@
 
 > NimBox SRE is a managed site reliability engineering and observability service that helps technical teams operate infrastructure, including hosts behind NAT, resolve incidents, and provide SLA evidence without building a 24/7 NOC.
 
-NimBox SRE complements existing monitoring with a self-discovering agent, native PAM, eBPF profiling, approved runbooks, coordinated incident management, and monthly operational reports. The service is for MSPs and technical operations teams that need more operational capacity without expanding their team.
+NimBox SRE complements existing monitoring with a self-discovering agent, native PAM, eBPF profiling, approved runbooks, coordinated incident management, evidence of every intervention, and monthly operational reports. The service is for MSPs and technical operations teams that need more operational capacity without expanding their team.
+
+## What it monitors
+
+The agent is a single self-contained binary that discovers what a host runs and watches it without per-host configuration.
+
+- **Applications**: Zimbra, Carbonio, Plesk (including its backups), Hestia, MySQL, Redis, Memcached, PHP-FPM, Varnish, Docker and Docker Swarm including container events, container registries, systemd units, TLS certificates.
+- **Platforms**: AWS EC2 and CloudWatch (via IMDSv2 instance profile, no stored access keys), Proxmox.
+- **Kubernetes**: the agent recognises a host that is a Kubernetes node and watches its containers and system, but it does not read the cluster API — there is no pod, deployment or cluster event monitoring today.
+- **Hardware**: SMART disk health, NVIDIA GPUs including XID errors.
+- **System**: CPU, memory, disk and inodes, mount points, pressure stall information (PSI), out-of-memory kills, process execution and death causes through eBPF, network quality (latency, jitter and packet loss to chosen targets), network neighbours.
+
+## Integrations
+
+- **Tickets**: Jira and GitLab. A ticket is opened when an incident needs a person — blocked, out of scope to act, or past the committed time — and closed when the incident resolves.
+- **Conversation**: Telegram, Slack, Google Chat and WhatsApp. Requests and replies happen in the same thread; the requester's identity comes from the channel, not from what anyone types.
+- **Metrics**: Grafana. Dashboards are included and open with the console session, or a customer can connect their own Grafana to a Prometheus-compatible endpoint scoped to their organisation.
+- **Standards**: Monit, OpenTelemetry (OTLP), Prometheus, webhooks.
+
+## Evidence and retention
+
+Every incident carries a number with a per-company prefix, the record of who asked for what and through which channel, and a recording of the session when an intervention took place. Recordings, traces and history are retained for 30 days by default; 12 and 24 month tiers are available.
 
 ## Main resources
 
