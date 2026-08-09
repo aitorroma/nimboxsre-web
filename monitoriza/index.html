@@ -18,7 +18,7 @@
       <h2>Sistema</h2>
       <ul>
 <li><strong>CPU, memoria, disco e inodos</strong> — Con el detalle por punto de montaje, no un porcentaje global que esconde el disco que se llena.</li>
-<li><strong>Presión del sistema (PSI)</strong> — Cuánto esperan de verdad los procesos por CPU, memoria o E/S. Un servidor al 40 % de CPU puede estar ahogado, y esto lo dice.</li>
+<li><strong>Carga descompuesta</strong> — El load average mezcla lo que quiere CPU con lo que está parado esperando disco. Aquí van separados: «carga 40 y el servidor no da más» y «carga 40 pero nadie usa CPU, es el disco» son el mismo número y averías opuestas.</li><li><strong>Sistemas de ficheros en sólo lectura</strong> — Cuando el kernel encuentra errores graves de E/S, remonta en sólo lectura. Todo parece seguir funcionando y nada se puede escribir, que es de las averías que más tardan en descubrirse.</li><li><strong>Presión del sistema (PSI)</strong> — Cuánto esperan de verdad los procesos por CPU, memoria o E/S. Un servidor al 40 % de CPU puede estar ahogado, y esto lo dice.</li>
 <li><strong>Muertes por falta de memoria</strong> — Quién mató al proceso y por qué, distinguiendo el OOM real de una señal cualquiera.</li>
 <li><strong>Procesos, con eBPF</strong> — Ejecuciones y muertes con su causa, leídas del kernel. Sin muestreo: no se pierde el proceso que vivió dos segundos.</li>
 </ul>
@@ -59,7 +59,7 @@
       <h2>Red</h2>
       <ul>
 <li><strong>Calidad hacia donde te importe</strong> — Latencia, jitter y pérdida de paquetes contra los destinos que elijas. No «hay red o no», sino cómo de buena es.</li>
-<li><strong>Vecinos de red</strong> — Qué hay alrededor del host.</li>
+<li><strong>Equipos MikroTik</strong> — Se descubren por su protocolo de vecindad, que emiten cada 60 segundos. Pasado ese rato, el silencio ya no es casualidad.</li><li><strong>Vecinos de red</strong> — Qué hay alrededor del host.</li>
 </ul>
       <div class="box"><p>Cada cosa se lee de la forma menos intrusiva que existe: Asterisk por su socket local, Kubernetes desde el nodo, AWS por el perfil de instancia. Es lo que hace que te dejen instalarlo en una máquina que no es tuya.</p></div>
     </div></main>
