@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <title>Qué monitoriza — NimBox SRE</title>
+    <meta name="description" content="Todo lo que NimBox SRE vigila sin configuración por host: sistema, contenedores, Kubernetes, paneles de hosting, aplicaciones, Asterisk, AWS, Proxmox, hardware y red." />
+    <link rel="icon" href="/assets/favicon-32.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/legal.css" />
+  </head>
+  <body>
+    <header class="legal-top"><div class="wrap"><a href="/" aria-label="NimBox SRE, inicio"><img src="/assets/nimbox-sre-logo.png" alt="NimBox SRE" /></a><a class="back" href="/">← Volver</a></div></header>
+    <main class="legal"><div class="wrap">
+      <p class="eyebrow">Cobertura</p>
+      <h1>Qué monitoriza</h1>
+      <p><strong>No se configura nada por host.</strong> El agente llega, descubre qué corre en la máquina y lo vigila. Esa es la pieza que hace que todo lo de abajo sea útil: sin ella, cada detector sería un alta manual por servidor.</p>
+      <h2>Sistema</h2>
+      <ul>
+<li><strong>CPU, memoria, disco e inodos</strong> — Con el detalle por punto de montaje, no un porcentaje global que esconde el disco que se llena.</li>
+<li><strong>Presión del sistema (PSI)</strong> — Cuánto esperan de verdad los procesos por CPU, memoria o E/S. Un servidor al 40 % de CPU puede estar ahogado, y esto lo dice.</li>
+<li><strong>Muertes por falta de memoria</strong> — Quién mató al proceso y por qué, distinguiendo el OOM real de una señal cualquiera.</li>
+<li><strong>Procesos, con eBPF</strong> — Ejecuciones y muertes con su causa, leídas del kernel. Sin muestreo: no se pierde el proceso que vivió dos segundos.</li>
+</ul>
+      <h2>Contenedores</h2>
+      <ul>
+<li><strong>Docker y Docker Swarm</strong> — Contenedores en marcha y sus eventos. Entiende que en Swarm un reinicio de task es normal y una caída no.</li>
+<li><strong>Kubernetes</strong> — Los pods que corren en el nodo, con su namespace y su consumo. Desde el propio nodo, sin credenciales del clúster.</li>
+<li><strong>Kata Containers</strong> — Distingue el runtime: un sandbox de Kata se reporta como tal, con la versión instalada.</li>
+<li><strong>Registries</strong> — El registro de imágenes del que depende tu despliegue.</li>
+</ul>
+      <h2>Paneles de hosting</h2>
+      <ul>
+<li><strong>Plesk</strong> — El panel y sus servicios.</li>
+<li><strong>Copias de seguridad de Plesk</strong> — Si dejan de hacerse, te enteras antes que tú mismo. Nadie mira las copias hasta que hay que restaurar, y entonces ya es tarde.</li>
+<li><strong>HestiaCP</strong> — El panel y lo que lo sostiene.</li>
+</ul>
+      <h2>Aplicaciones</h2>
+      <ul>
+<li><strong>Correo: Zimbra y Carbonio</strong> — Los servicios de la plataforma de correo, que es donde más se nota una caída.</li>
+<li><strong>Bases y cachés: MySQL, Redis, Memcached</strong></li>
+<li><strong>Web: PHP-FPM y Varnish</strong> — Incluida la eficacia real de la caché, no sólo si el proceso vive.</li>
+<li><strong>systemd y certificados</strong> — Unidades que fallan y certificados que caducan, que es el aviso que siempre llega tarde.</li>
+</ul>
+      <h2>Telefonía</h2>
+      <ul>
+<li><strong>Asterisk</strong> — Canales y llamadas activas, llamadas procesadas, endpoints PJSIP disponibles y no disponibles, contactos, colas y miembros. Se lee por el socket CLI local: ni abre ni necesita SIP ni AMI.</li>
+</ul>
+      <h2>Plataformas</h2>
+      <ul>
+<li><strong>AWS: EC2 y CloudWatch</strong> — Por el perfil de instancia con IMDSv2. Sin guardar ninguna access key.</li>
+<li><strong>Proxmox</strong> — El hipervisor y lo que corre encima.</li>
+</ul>
+      <h2>Hardware</h2>
+      <ul>
+<li><strong>Discos SMART</strong> — El aviso que llega semanas antes del fallo, si alguien lo mira.</li>
+<li><strong>GPUs NVIDIA</strong> — Incluidos los errores XID, que son los que explican por qué se cayó el trabajo.</li>
+</ul>
+      <h2>Red</h2>
+      <ul>
+<li><strong>Calidad hacia donde te importe</strong> — Latencia, jitter y pérdida de paquetes contra los destinos que elijas. No «hay red o no», sino cómo de buena es.</li>
+<li><strong>Vecinos de red</strong> — Qué hay alrededor del host.</li>
+</ul>
+      <div class="box"><p>Cada cosa se lee de la forma menos intrusiva que existe: Asterisk por su socket local, Kubernetes desde el nodo, AWS por el perfil de instancia. Es lo que hace que te dejen instalarlo en una máquina que no es tuya.</p></div>
+    </div></main>
+    <footer class="legal-foot"><div class="wrap"><span>© 2026 NimBox SRE · Aitor Roma Vázquez</span><nav><a href="/aviso-legal/">Aviso legal</a><a href="/privacidad/">Privacidad</a><a href="/cookies/">Cookies</a><a href="/ia/">Inteligencia Artificial</a><a href="mailto:aitor@nimbox360.com">Contacto</a></nav></div></footer>
+  </body>
+</html>
